@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_edumosphere_lms_domain_CourseCompletions" object="${coursecompletions}" path="/coursecompletionses" z="6hjS/fZ2pHcMH/GvzuP/HnTLwf0=">
+        <field:display field="companyid" id="s_com_edumosphere_lms_domain_CourseCompletions_companyid" object="${coursecompletions}" z="eDsm5F6TjDA4K+7ZPvXjrIJKZ/0="/>
+        <field:display field="userid" id="s_com_edumosphere_lms_domain_CourseCompletions_userid" object="${coursecompletions}" z="uKHLdgpIoLDblPRe8bki6UjwsOY="/>
+        <field:display field="courseid" id="s_com_edumosphere_lms_domain_CourseCompletions_courseid" object="${coursecompletions}" z="60ZbnXpZm6ATo+lEuVm9bGCx83Q="/>
+        <field:display field="timeenrolled" id="s_com_edumosphere_lms_domain_CourseCompletions_timeenrolled" object="${coursecompletions}" z="XmH4YzP/SDTm5/yzKK7V9Z2wb1o="/>
+        <field:display field="timestarted" id="s_com_edumosphere_lms_domain_CourseCompletions_timestarted" object="${coursecompletions}" z="LHjfvd/G8XJqP7frTko7yIL1lmI="/>
+        <field:display field="timecompleted" id="s_com_edumosphere_lms_domain_CourseCompletions_timecompleted" object="${coursecompletions}" z="UNizHYeGUYot8w1hLdqhEYd52/k="/>
+    </page:show>
+</div>

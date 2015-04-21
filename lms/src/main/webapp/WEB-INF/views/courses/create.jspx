@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_edumosphere_lms_domain_Course" modelAttribute="course" path="/courses" render="${empty dependencies}" z="CiUSbxd/rYettR3AzNS0+cG3m6k=">
+        <field:simple field="courseCompletionss" id="c_com_edumosphere_lms_domain_Course_courseCompletionss" messageCode="entity_reference_not_managed" messageCodeAttribute="Course Completions" z="i3sHiN/uoePkJEaODJzZMrHtUu0="/>
+        <field:simple field="courseFormatOptionss" id="c_com_edumosphere_lms_domain_Course_courseFormatOptionss" messageCode="entity_reference_not_managed" messageCodeAttribute="Course Format Options" z="7t6a/7tbzqeFSXofD2Bts7VC4Pw="/>
+        <field:simple field="courseModuleses" id="c_com_edumosphere_lms_domain_Course_courseModuleses" messageCode="entity_reference_not_managed" messageCodeAttribute="Course Modules" z="jxYIrmVumgqpstE5YqlMBWYwvDc="/>
+        <field:simple field="courseSectionss" id="c_com_edumosphere_lms_domain_Course_courseSectionss" messageCode="entity_reference_not_managed" messageCodeAttribute="Course Sections" z="//14PAex/niAMeRyqBP8rpFsYKU="/>
+        <field:select field="categoryid" id="c_com_edumosphere_lms_domain_Course_categoryid" itemValue="categoryid" items="${coursecategorieses}" path="/coursecategorieses" z="hXWpmf45wY+lWKYIbqQ+HNuLH5U="/>
+        <field:select field="companyid" id="c_com_edumosphere_lms_domain_Course_companyid" itemValue="companyid" items="${companys}" path="/companys" z="HHbic1StBbfrk2vVDYSYkfLn/gk="/>
+        <field:input field="sortorder" id="c_com_edumosphere_lms_domain_Course_sortorder" required="true" validationMessageCode="field_invalid_integer" z="nKty+Cs8pKvRzDeYRDMqsNBgeQo="/>
+        <field:input field="fullname" id="c_com_edumosphere_lms_domain_Course_fullname" required="true" z="KkzgC8qXFgNocBds+6yhF+OjDPE="/>
+        <field:input field="shortname" id="c_com_edumosphere_lms_domain_Course_shortname" required="true" z="JOgrEIw5RiDalrjB6ZLJPKxgPhY="/>
+        <field:input field="coursenumber" id="c_com_edumosphere_lms_domain_Course_coursenumber" required="true" z="5dGmU51Ul82QiwFa66/nJU3Xejo="/>
+        <field:input field="summary" id="c_com_edumosphere_lms_domain_Course_summary" z="HCU6Ytnu8EdbVxcCPTULYL8x6HY="/>
+        <field:input field="summaryformat" id="c_com_edumosphere_lms_domain_Course_summaryformat" required="true" validationMessageCode="field_invalid_integer" z="0P/KePxv6I/t94QtiFUbD/yA+SQ="/>
+        <field:input field="format" id="c_com_edumosphere_lms_domain_Course_format" required="true" z="v0kpk8YSLMbXcrXc0YeXvQdBSjg="/>
+        <field:input field="showgrades" id="c_com_edumosphere_lms_domain_Course_showgrades" required="true" validationMessageCode="field_invalid_integer" z="qf4YNSXZIhW5XiLkGritiMr90fM="/>
+        <field:input field="startdate" id="c_com_edumosphere_lms_domain_Course_startdate" required="true" validationMessageCode="field_invalid_integer" z="hMs/+Okk0TzXvYRqzHFt5Of5FlU="/>
+        <field:input field="enddate" id="c_com_edumosphere_lms_domain_Course_enddate" required="true" validationMessageCode="field_invalid_integer" z="8qcruARh0zDmjdUetQhakc9HI6U="/>
+        <field:checkbox field="status" id="c_com_edumosphere_lms_domain_Course_status" z="yDs8xs55ANvD5anq8llC5kvukb4="/>
+        <field:input field="createdtime" id="c_com_edumosphere_lms_domain_Course_createdtime" required="true" validationMessageCode="field_invalid_integer" z="89iir1NJrLpWl+rN2iW9D6HKmFs="/>
+        <field:input field="modifiedtime" id="c_com_edumosphere_lms_domain_Course_modifiedtime" required="true" validationMessageCode="field_invalid_integer" z="lGMz6JL4d/NBqEN1bKgC1XiNGA0="/>
+        <field:checkbox field="enablecompletion" id="c_com_edumosphere_lms_domain_Course_enablecompletion" z="NpEDaMX0kB2MjtZf8AoYGT4pYFw="/>
+        <field:checkbox field="completionnotify" id="c_com_edumosphere_lms_domain_Course_completionnotify" z="YEScBzhLVs8aEkmBsq+Fbb62wIs="/>
+        <field:input field="publishstatus" id="c_com_edumosphere_lms_domain_Course_publishstatus" required="true" validationMessageCode="field_invalid_integer" z="U0BYFF+uo+EsY/Op9C0Ck93Sdck="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_edumosphere_lms_domain_Course" render="${not empty dependencies}" z="RJSGHywrtH+vC7RC5wMAYH5bSEg="/>
+</div>

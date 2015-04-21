@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_edumosphere_lms_domain_CourseCompletions" items="${coursecompletionses}" z="JemXTOu3fy1WWfU98iGc27yp798=">
+        <table:table data="${coursecompletionses}" id="l_com_edumosphere_lms_domain_CourseCompletions" path="/coursecompletionses" typeIdFieldName="coursecompid" z="1qOb7O/n3ePWn0+fM9IxbBzS43E=">
+            <table:column id="c_com_edumosphere_lms_domain_CourseCompletions_companyid" property="companyid" z="PAGt42uoIzd/MQoEIMzkh2XhZ7A="/>
+            <table:column id="c_com_edumosphere_lms_domain_CourseCompletions_userid" property="userid" z="SMmpmJ9pRJ/7Hs1X2LQK9kdPI0A="/>
+            <table:column id="c_com_edumosphere_lms_domain_CourseCompletions_courseid" property="courseid" z="Sfra4JwgJP871diV4wLLM9xrbHE="/>
+            <table:column id="c_com_edumosphere_lms_domain_CourseCompletions_timeenrolled" property="timeenrolled" z="OE+XyVG9h9ei/5hV5EKl4oNCkSQ="/>
+            <table:column id="c_com_edumosphere_lms_domain_CourseCompletions_timestarted" property="timestarted" z="Kl0iPqA9rnS9BJs+SrVGPmzpMB8="/>
+            <table:column id="c_com_edumosphere_lms_domain_CourseCompletions_timecompleted" property="timecompleted" z="Qwz9w80m94Ch14ymQxzUliQCyfI="/>
+        </table:table>
+    </page:list>
+</div>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_edumosphere_lms_domain_CourseSections" object="${coursesections}" path="/coursesectionses" z="D8VIFRF1hbjqIRFB84hyjn7wuGw=">
+        <field:display field="companyid" id="s_com_edumosphere_lms_domain_CourseSections_companyid" object="${coursesections}" z="VlBfZai4nXWE+H3D63cD1Ope4c8="/>
+        <field:display field="courseid" id="s_com_edumosphere_lms_domain_CourseSections_courseid" object="${coursesections}" z="sN0lYU73NLnAyGfEQOR3c9rFYLs="/>
+        <field:display field="section" id="s_com_edumosphere_lms_domain_CourseSections_section" object="${coursesections}" z="mLqClVF00XFQu7AzqpprdU0EaxI="/>
+        <field:display field="name" id="s_com_edumosphere_lms_domain_CourseSections_name" object="${coursesections}" z="yMMlTIO13kbb2e/6pd2jUF7CwKM="/>
+        <field:display field="summary" id="s_com_edumosphere_lms_domain_CourseSections_summary" object="${coursesections}" z="hKe+TXKi3erDiTvQlmDEb41Iue0="/>
+        <field:display field="summaryformat" id="s_com_edumosphere_lms_domain_CourseSections_summaryformat" object="${coursesections}" z="NNI6RIZmGahBOmleqDr4AYeTEd0="/>
+        <field:display field="sequence" id="s_com_edumosphere_lms_domain_CourseSections_sequence" object="${coursesections}" z="nLMc22AEz5PGD0+I9QJbpthC6y8="/>
+        <field:display field="status" id="s_com_edumosphere_lms_domain_CourseSections_status" object="${coursesections}" z="U9MnxXWAao+YsWuTD/I5f0DvaHk="/>
+    </page:show>
+</div>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_edumosphere_lms_domain_CourseFormatOptions" object="${courseformatoptions}" path="/courseformatoptionses" z="//uOlBLQYWMPRyh3IviN3SuK8EQ=">
+        <field:display field="companyid" id="s_com_edumosphere_lms_domain_CourseFormatOptions_companyid" object="${courseformatoptions}" z="tiZaD5abD5ddq31mY4olKgs3+D0="/>
+        <field:display field="courseid" id="s_com_edumosphere_lms_domain_CourseFormatOptions_courseid" object="${courseformatoptions}" z="QlMyUhrRbEHbeFJWK+IOvcn89GE="/>
+        <field:display field="format" id="s_com_edumosphere_lms_domain_CourseFormatOptions_format" object="${courseformatoptions}" z="cgVuW+Tu7VPUOdiCRwsN/y17J4A="/>
+        <field:display field="sectionid" id="s_com_edumosphere_lms_domain_CourseFormatOptions_sectionid" object="${courseformatoptions}" z="aftlgOJ/2/y4CcAGDpX+w/jh+yY="/>
+        <field:display field="name" id="s_com_edumosphere_lms_domain_CourseFormatOptions_name" object="${courseformatoptions}" z="FZRAf4A40D9gRTw4LpIPy/oiC6s="/>
+        <field:display field="value" id="s_com_edumosphere_lms_domain_CourseFormatOptions_value" object="${courseformatoptions}" z="DP/vCoDrn8wPHD/pXeMvJeRXewA="/>
+    </page:show>
+</div>

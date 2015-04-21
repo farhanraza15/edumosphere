@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_edumosphere_lms_domain_CourseModules" items="${coursemoduleses}" z="AYPudw8rfIVYgrv2h/DR4+5by90=">
+        <table:table data="${coursemoduleses}" id="l_com_edumosphere_lms_domain_CourseModules" path="/coursemoduleses" typeIdFieldName="coursemoduleid" z="BMEyewsq40K//dU73b14cvgewhU=">
+            <table:column id="c_com_edumosphere_lms_domain_CourseModules_companyid" property="companyid" z="g6UEWTCXSqgkXsl//6K6s4WcF3o="/>
+            <table:column id="c_com_edumosphere_lms_domain_CourseModules_moduleid" property="moduleid" z="LRZu+VzUJKLwHI9VJvy8aTEHc+Q="/>
+            <table:column id="c_com_edumosphere_lms_domain_CourseModules_courseid" property="courseid" z="VePob12Hsu/9XjL4H5auFUjjxlg="/>
+            <table:column id="c_com_edumosphere_lms_domain_CourseModules_instance" property="instance" z="UFrJQulQbYV/8DMVzgacm1B/TRE="/>
+            <table:column id="c_com_edumosphere_lms_domain_CourseModules_section" property="section" z="S2/ZqOgUzHAQTqESl/+NknYoo6k="/>
+        </table:table>
+    </page:list>
+</div>

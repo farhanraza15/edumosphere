@@ -1,0 +1,61 @@
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-04-21 16:34:28
+project --topLevelPackage com.edumosphere.main --projectName edumosphere
+persistence setup --database MYSQL --provider HIBERNATE 
+// [failed] database introspect --schema edumosphere
+database introspect --schema edumosphere
+database reverse engineer --schema edumosphere --package com.edumosphere.lms.domain.course --includeTables "course*"
+// [failed] database reverse engineer --schema edumosphere --package com.edumosphere.lms.domain.module --includeTables "modules"
+// [failed] database reverse engineer --schema edumosphere --package com.edumosphere.lms.domain.company --includeTables "company"
+exit
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log closed at 2015-04-21 16:53:12
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-04-21 16:53:55
+// [failed] database reverse engineer --schema edumosphere --package com.edumosphere.lms.domain.company --includeTables "company"
+database reverse engineer --schema edumosphere
+database reverse engineer --schema edumosphere --package com.edumosphere.lms.domain.course --includeTables "course* modules"
+exit
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log closed at 2015-04-21 17:03:20
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-04-21 17:03:46
+database reverse engineer --schema edumosphere --package com.edumosphere.lms.domain.course --includeTables "course* modules"
+database reverse engineer --schema edumosphere --package com.edumosphere.lms.domain.course --includeTables "course* modules"
+database reverse engineer --schema edumosphere --package com.edumosphere.lms.domain.course --includeTables "course* modules"
+exit
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log closed at 2015-04-21 17:05:34
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-04-21 17:06:16
+database reverse engineer --schema edumosphere --package com.edumosphere.lms.domain.course --includeTables "course* modules"
+database introspect --schema edumosphere
+database reverse engineer --schema edumosphere --package com.edumosphere.lms.domain.course --includeTables "course* modules"
+database reverse engineer --schema edumosphere --package com.edumosphere.lms.domain.course --includeTables "course*"
+// [failed] database reverse engineer --schema edumosphere --package com.edumosphere.lms.domain.course --includeTables "modules"
+database introspect --schema edumosphere
+database introspect --schema edumosphere
+exit
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log closed at 2015-04-21 17:16:07
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-04-21 17:16:38
+// [failed] database reverse engineer --schema edumosphere --package com.edumosphere.lms.domain.company --includeTables "company"
+database reverse engineer --schema edumosphere --package com.edumosphere.lms.domain.course --includeTables "course* modules"
+// [failed] database reverse engineer --schema edumosphere --package com.edumosphere.lms.domain.user --includeTables "company role user permission userpermission"
+database reverse engineer --schema edumosphere --package com.edumosphere.lms.domain.user --includeTables "userpermission"
+exit
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log closed at 2015-04-21 17:26:32
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-04-21 17:28:51
+quit
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log closed at 2015-04-21 17:29:01
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-04-21 17:31:48
+database reverse engineer --schema edumosphere --package ~.domain
+exit
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log closed at 2015-04-21 17:34:01
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-04-21 17:34:16
+database reverse engineer --schema edumosphere --service true --package ~.service
+exit
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log closed at 2015-04-21 17:36:37
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-04-21 17:37:17
+database reverse engineer --schema edumosphere --package com.edumosphere.lms.domain --service true
+exit
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log closed at 2015-04-21 17:40:46
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log opened at 2015-04-21 17:40:56
+database reverse engineer --schema edumosphere --package com.edumosphere.lms.domain
+controller all --package ~.web
+security setup
+perform tests
+exit
+// Spring Roo 1.3.1.RELEASE [rev f4f5256] log closed at 2015-04-21 18:05:43

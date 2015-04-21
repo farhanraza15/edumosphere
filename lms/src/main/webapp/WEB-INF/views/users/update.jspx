@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_edumosphere_lms_domain_User" idField="userid" modelAttribute="user" path="/users" versionField="none" z="c5nzb65+xbptGmRI8NWhrkioCsc=">
+        <field:simple field="courseCompletionss" id="c_com_edumosphere_lms_domain_User_courseCompletionss" messageCode="entity_reference_not_managed" messageCodeAttribute="Course Completions" z="MYhUhQ9yHfeOAqCueGGQWL+T/fE="/>
+        <field:simple field="courseModulesCompletions" id="c_com_edumosphere_lms_domain_User_courseModulesCompletions" messageCode="entity_reference_not_managed" messageCodeAttribute="Course Modules Completion" z="OkeUWsEDSLqbVV90SqLLK1pBBzo="/>
+        <field:simple field="userpermissions" id="c_com_edumosphere_lms_domain_User_userpermissions" messageCode="entity_reference_not_managed" messageCodeAttribute="Userpermission" z="+xROsCWUP5tix1TKutMvqaym+64="/>
+        <field:select field="companyid" id="c_com_edumosphere_lms_domain_User_companyid" itemValue="companyid" items="${companys}" path="/companys" z="3/CK5C/tJLINhba0pE+YRb/66ko="/>
+        <field:select field="roletype" id="c_com_edumosphere_lms_domain_User_roletype" itemValue="roleid" items="${roles}" path="/roles" z="lM55nLNgtTStONhoIPexU9C2MpY="/>
+        <field:input field="auth" id="c_com_edumosphere_lms_domain_User_auth" required="true" z="4mYjifiNn2rNxJPii4p4/ZoVwHw="/>
+        <field:checkbox field="active" id="c_com_edumosphere_lms_domain_User_active" z="1rYHD/nAHM1R+bOvSkkYwhg7Edo="/>
+        <field:input field="username" id="c_com_edumosphere_lms_domain_User_username" required="true" z="ML1NQd9lxti0YGo3dIgYddcsB1U="/>
+        <field:input field="password" id="c_com_edumosphere_lms_domain_User_password" required="true" z="XpzHH/g/PSNDW4FYY7PMD6ki/KU="/>
+        <field:input field="firstname" id="c_com_edumosphere_lms_domain_User_firstname" required="true" z="y6UN5D2jSDk3OkAfEBdXUKPlUQ0="/>
+        <field:input field="lastname" id="c_com_edumosphere_lms_domain_User_lastname" required="true" z="sU9E0HDnRmZaTXNaWspvfLRb/w4="/>
+        <field:input field="email" id="c_com_edumosphere_lms_domain_User_email" required="true" validationMessageCode="field_invalid_email" z="nq7DLrnlAyEcIY4tbMRWA/cJmLg="/>
+        <field:input field="createtime" id="c_com_edumosphere_lms_domain_User_createtime" required="true" validationMessageCode="field_invalid_integer" z="qCKu2DEOcxffr73bDcvMNIBLado="/>
+        <field:input field="updatetime" id="c_com_edumosphere_lms_domain_User_updatetime" required="true" validationMessageCode="field_invalid_integer" z="Gjh6i9hWKIlw07ktmzbsuJEuNkc="/>
+        <field:checkbox field="emailstop" id="c_com_edumosphere_lms_domain_User_emailstop" z="A4YcTxgHAKSlVS80BMz/F0KVqDA="/>
+        <field:input field="skype" id="c_com_edumosphere_lms_domain_User_skype" required="true" z="nbTsl75t+ogh7ZGFhQwdDHwdhNI="/>
+        <field:input field="yahoo" id="c_com_edumosphere_lms_domain_User_yahoo" required="true" z="JQA8Wf9zIuiwpYoLSS1L1h+W9jc="/>
+        <field:input field="gmail" id="c_com_edumosphere_lms_domain_User_gmail" required="true" z="1NQpT4NJBTIDCQTIkNeH2yFnLuY="/>
+        <field:input field="phone1" id="c_com_edumosphere_lms_domain_User_phone1" required="true" z="IjeZr2Vf/ktejsbwpfW6RU4GMEU="/>
+        <field:input field="phone2" id="c_com_edumosphere_lms_domain_User_phone2" required="true" z="74LTjeC0Xg6yMddtfrXvlOIPwo0="/>
+        <field:input field="institution" id="c_com_edumosphere_lms_domain_User_institution" required="true" z="Hah2gv0sQ9+OXM6145TtSOT28gw="/>
+        <field:input field="department" id="c_com_edumosphere_lms_domain_User_department" required="true" z="ziqLWz2nsKc5pcbmDdQqQYn9mhA="/>
+        <field:input field="address" id="c_com_edumosphere_lms_domain_User_address" required="true" z="l5D42FdwUeU7vPwKRyY9UXdVmww="/>
+        <field:input field="city" id="c_com_edumosphere_lms_domain_User_city" required="true" z="eQi2k4Tl4yR10+pGcarYJVpxPx0="/>
+        <field:input field="country" id="c_com_edumosphere_lms_domain_User_country" required="true" z="vf1LDIjjZHkLBxt73nwLU5cI7WE="/>
+        <field:input field="lang" id="c_com_edumosphere_lms_domain_User_lang" required="true" z="s5gPZKevo5sSt6KDAsYtnlcCdFU="/>
+        <field:input field="calendartype" id="c_com_edumosphere_lms_domain_User_calendartype" required="true" z="IQ5nH7BfZeHu+fU2HufFHV/hV0s="/>
+        <field:input field="theme" id="c_com_edumosphere_lms_domain_User_theme" required="true" z="CkPvygo+tMssNOAXGComWZtDFUs="/>
+        <field:input field="timezone" id="c_com_edumosphere_lms_domain_User_timezone" required="true" z="2kUZatxpaA0pdA9BXKOzEHwYzw0="/>
+        <field:input field="currentlogin" id="c_com_edumosphere_lms_domain_User_currentlogin" required="true" validationMessageCode="field_invalid_integer" z="qaU5lFPOk9TFf7qrafUnmeqhmoE="/>
+        <field:checkbox field="autosubscribe" id="c_com_edumosphere_lms_domain_User_autosubscribe" z="XDzBocYc1Osd8B0LL2fNSNVidXo="/>
+    </form:update>
+</div>

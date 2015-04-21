@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_edumosphere_lms_domain_CourseModules" modelAttribute="courseModules" path="/coursemoduleses" render="${empty dependencies}" z="kWZ36kJTqhzPH8HAANN1BpnKuh8=">
+        <field:simple field="courseModulesCompletions" id="c_com_edumosphere_lms_domain_CourseModules_courseModulesCompletions" messageCode="entity_reference_not_managed" messageCodeAttribute="Course Modules Completion" z="SUfuzwGjrJXNpDfKZknyAq9JKMI="/>
+        <field:select field="companyid" id="c_com_edumosphere_lms_domain_CourseModules_companyid" itemValue="companyid" items="${companys}" path="/companys" z="0U8WFELTZD7IhP7HGDQZaR/M2js="/>
+        <field:select field="moduleid" id="c_com_edumosphere_lms_domain_CourseModules_moduleid" itemValue="moduleid" items="${moduleses}" path="/moduleses" z="ETzhQyDLwYCxx2TpVgtb/hJzEKM="/>
+        <field:select field="courseid" id="c_com_edumosphere_lms_domain_CourseModules_courseid" itemValue="courseid" items="${courses}" path="/courses" z="OsYJHVIpV6cTl1/eVIFX102QDnQ="/>
+        <field:input field="instance" id="c_com_edumosphere_lms_domain_CourseModules_instance" required="true" validationMessageCode="field_invalid_integer" z="5VBTxEQ4dTKJIYXsO0bYRutBRDo="/>
+        <field:input field="section" id="c_com_edumosphere_lms_domain_CourseModules_section" required="true" validationMessageCode="field_invalid_integer" z="bfg5PZk7wlfREzjfH7F8PSnvrlI="/>
+        <field:input field="idnumber" id="c_com_edumosphere_lms_domain_CourseModules_idnumber" z="hvzO0H1aLXefobgJoSSMn89HoO0="/>
+        <field:input field="addedon" id="c_com_edumosphere_lms_domain_CourseModules_addedon" required="true" validationMessageCode="field_invalid_integer" z="ySDlkkPGd0+32WsBNw6phnlItL8="/>
+        <field:input field="score" id="c_com_edumosphere_lms_domain_CourseModules_score" required="true" validationMessageCode="field_invalid_integer" z="KfE/PqNvkgkeqQ+dtVbV+RP9KZ8="/>
+        <field:input field="indent" id="c_com_edumosphere_lms_domain_CourseModules_indent" required="true" validationMessageCode="field_invalid_integer" z="re2UPJZ2aE61o0Ezub6PRL5bBsE="/>
+        <field:checkbox field="status" id="c_com_edumosphere_lms_domain_CourseModules_status" z="vzW3kAYlJiU7z3Tgw1oXXiLLrtk="/>
+        <field:checkbox field="completion" id="c_com_edumosphere_lms_domain_CourseModules_completion" z="GSwLeDTHmOGgz44W5hD9iLrPkNM="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_edumosphere_lms_domain_CourseModules" render="${not empty dependencies}" z="Qwz8nnT5NtQGt4AFhBgCdnQKIcg="/>
+</div>

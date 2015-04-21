@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_edumosphere_lms_domain_Role" object="${role}" path="/roles" z="PJNHEQ1qCkckpN+u9AmICM+zHzA=">
+        <field:display field="roletype" id="s_com_edumosphere_lms_domain_Role_roletype" object="${role}" z="6Lr8DXUm8KF8s2rlFlWD6+ZWdFI="/>
+        <field:display field="description" id="s_com_edumosphere_lms_domain_Role_description" object="${role}" z="mWOoQEPb/Tj1RQZ/V9jd5o3YBsk="/>
+        <field:display field="sortorder" id="s_com_edumosphere_lms_domain_Role_sortorder" object="${role}" z="AEnPSBlkP+u+4hB80XRFUmCa2mg="/>
+        <field:display field="archetype" id="s_com_edumosphere_lms_domain_Role_archetype" object="${role}" z="V+521VWWVOi4bFIJmSWloNLBPZA="/>
+    </page:show>
+</div>

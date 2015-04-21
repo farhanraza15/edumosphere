@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_edumosphere_lms_domain_CourseCategories" items="${coursecategorieses}" z="5jAz5ufXXnP5tSfe50KPKB8bEvA=">
+        <table:table data="${coursecategorieses}" id="l_com_edumosphere_lms_domain_CourseCategories" path="/coursecategorieses" typeIdFieldName="categoryid" z="qGhZfcVb/1L1XMiaTsUy5SXqeTY=">
+            <table:column id="c_com_edumosphere_lms_domain_CourseCategories_companyid" property="companyid" z="iMhova8f89hmQwhFkco7D1hOCyA="/>
+            <table:column id="c_com_edumosphere_lms_domain_CourseCategories_categoryparentid" property="categoryparentid" z="wZr32UNA2NQ1hQVK+J49S0ZyDFo="/>
+            <table:column id="c_com_edumosphere_lms_domain_CourseCategories_title" property="title" z="ufCFWyDGH4LZXfkCF325UT8WoUM="/>
+            <table:column id="c_com_edumosphere_lms_domain_CourseCategories_categorynumber" property="categorynumber" z="yuTV0LXpJvQXce9G341DJN9dVD8="/>
+        </table:table>
+    </page:list>
+</div>

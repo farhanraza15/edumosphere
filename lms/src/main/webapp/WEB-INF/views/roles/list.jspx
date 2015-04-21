@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_edumosphere_lms_domain_Role" items="${roles}" z="zF1DdKMRJE62pryX+Sc++vrxK44=">
+        <table:table data="${roles}" id="l_com_edumosphere_lms_domain_Role" path="/roles" typeIdFieldName="roleid" z="EjXTsYgZxK64KmH5s7zbtL6sPuc=">
+            <table:column id="c_com_edumosphere_lms_domain_Role_roletype" property="roletype" z="k42HOH+S+c/1yuRNKwEht8GKtaQ="/>
+            <table:column id="c_com_edumosphere_lms_domain_Role_description" property="description" z="3NvApjrKjjWfI8IgIW8LnY8bj7g="/>
+            <table:column id="c_com_edumosphere_lms_domain_Role_sortorder" property="sortorder" z="5X/a6iHdYaMdDsoBWmc6Z9JyqvA="/>
+            <table:column id="c_com_edumosphere_lms_domain_Role_archetype" property="archetype" z="5J0LQxTrWOooz0H7OOoGjaBzmy4="/>
+        </table:table>
+    </page:list>
+</div>

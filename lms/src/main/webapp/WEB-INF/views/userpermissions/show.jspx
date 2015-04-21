@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_edumosphere_lms_domain_Userpermission" object="${userpermission}" path="/userpermissions" z="AJvhygJVC9/XEBfl6OEyMwXWmX8=">
+        <field:display field="companyid" id="s_com_edumosphere_lms_domain_Userpermission_companyid" object="${userpermission}" z="Ph4Z5RJnAIYQERrwOvHJQuTy460="/>
+        <field:display field="permissiontype" id="s_com_edumosphere_lms_domain_Userpermission_permissiontype" object="${userpermission}" z="bmLS1ItFzvfKSNs5x4y4Bbwr+o0="/>
+        <field:display field="userid" id="s_com_edumosphere_lms_domain_Userpermission_userid" object="${userpermission}" z="XA8K67vHWH3tLCNsQ8VC20c23aw="/>
+    </page:show>
+</div>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_edumosphere_lms_domain_User" object="${user}" path="/users" z="x3970c5kYjpbnRYJ36o/LXbSq5Q=">
+        <field:display field="companyid" id="s_com_edumosphere_lms_domain_User_companyid" object="${user}" z="9oaYjo/yVC/pJK0wn6YpZZ/smoo="/>
+        <field:display field="roletype" id="s_com_edumosphere_lms_domain_User_roletype" object="${user}" z="JZKTqmU54bjeHRoTekPe2uvAO9I="/>
+        <field:display field="auth" id="s_com_edumosphere_lms_domain_User_auth" object="${user}" z="414Zh2/dPy8dOJvS3/klHp4hGN4="/>
+        <field:display field="active" id="s_com_edumosphere_lms_domain_User_active" object="${user}" z="IiU3Bab4GPcunsi+gp0+T5LxaUk="/>
+        <field:display field="username" id="s_com_edumosphere_lms_domain_User_username" object="${user}" z="dPrfAX5sZ25Jqe+rjQydyBATRz0="/>
+        <field:display field="password" id="s_com_edumosphere_lms_domain_User_password" object="${user}" z="48E/SrG6Cgx87Zw5/81nbaTreiE="/>
+        <field:display field="firstname" id="s_com_edumosphere_lms_domain_User_firstname" object="${user}" z="wkkrep9Yc5BXqtPsd63wt62pVtY="/>
+        <field:display field="lastname" id="s_com_edumosphere_lms_domain_User_lastname" object="${user}" z="kxpavKXQMmxeFfKY3QQM/4D1R84="/>
+        <field:display field="email" id="s_com_edumosphere_lms_domain_User_email" object="${user}" z="xqoSGaMUT/eKQ4QPYYDAVWseN0U="/>
+        <field:display field="createtime" id="s_com_edumosphere_lms_domain_User_createtime" object="${user}" z="9QFHY4vYqL+OI1Lg81zpC5v978c="/>
+        <field:display field="updatetime" id="s_com_edumosphere_lms_domain_User_updatetime" object="${user}" z="l7PumBkJSfsorwz0AfzdFrW/e6g="/>
+        <field:display field="emailstop" id="s_com_edumosphere_lms_domain_User_emailstop" object="${user}" z="Vw93/+jgg8IvtI9gqtLXCP9pN/8="/>
+        <field:display field="skype" id="s_com_edumosphere_lms_domain_User_skype" object="${user}" z="Ui/rOutxiHaJIrXOICX1PCsT+yc="/>
+        <field:display field="yahoo" id="s_com_edumosphere_lms_domain_User_yahoo" object="${user}" z="ogoTPQwrmv0+I85P9+4Y9VsyAo4="/>
+        <field:display field="gmail" id="s_com_edumosphere_lms_domain_User_gmail" object="${user}" z="BuR+BLaM5bIqgSwCpUmAOGL6+w0="/>
+        <field:display field="phone1" id="s_com_edumosphere_lms_domain_User_phone1" object="${user}" z="QpGBJvIuKY8S1ny4l72sVftaRks="/>
+        <field:display field="phone2" id="s_com_edumosphere_lms_domain_User_phone2" object="${user}" z="2ff11Ssw0jb8uarpBpaclTw2ptc="/>
+        <field:display field="institution" id="s_com_edumosphere_lms_domain_User_institution" object="${user}" z="d8M/sZ9Zl96AKy2DsfkhfqnA7Fo="/>
+        <field:display field="department" id="s_com_edumosphere_lms_domain_User_department" object="${user}" z="0G3L5YhZBeovnZ2gIeG2NreG9FY="/>
+        <field:display field="address" id="s_com_edumosphere_lms_domain_User_address" object="${user}" z="fDcTdYFomz2/MqdTOTHhW1MMKO0="/>
+        <field:display field="city" id="s_com_edumosphere_lms_domain_User_city" object="${user}" z="F328k6JmWHR0VlHpqwP7tGq92qI="/>
+        <field:display field="country" id="s_com_edumosphere_lms_domain_User_country" object="${user}" z="xzhz15uJpXmuJyalB+CCCYoZxME="/>
+        <field:display field="lang" id="s_com_edumosphere_lms_domain_User_lang" object="${user}" z="YHByUW36nAtlatfGxy+t2gN/cuE="/>
+        <field:display field="calendartype" id="s_com_edumosphere_lms_domain_User_calendartype" object="${user}" z="CLQGdn/iRJS4yfQ0PAUpH/z4zJA="/>
+        <field:display field="theme" id="s_com_edumosphere_lms_domain_User_theme" object="${user}" z="zwzAKF6q0D0y79TSMmZTBPIikx8="/>
+        <field:display field="timezone" id="s_com_edumosphere_lms_domain_User_timezone" object="${user}" z="I4tOAapxsG0K5RcNfUE5FzN8/88="/>
+        <field:display field="currentlogin" id="s_com_edumosphere_lms_domain_User_currentlogin" object="${user}" z="EcXVV10VGNo0FmM99ThTjOl7ihA="/>
+        <field:display field="autosubscribe" id="s_com_edumosphere_lms_domain_User_autosubscribe" object="${user}" z="Ejju4l/nzoRJjHEUEuhMIUjd9fU="/>
+    </page:show>
+</div>

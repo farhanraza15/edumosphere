@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_edumosphere_lms_domain_Modules" object="${modules}" path="/moduleses" z="gJn4/N0+Gvicx7QOYgTd26q84aY=">
+        <field:display field="companyid" id="s_com_edumosphere_lms_domain_Modules_companyid" object="${modules}" z="RAKxKqsWnRNoXDzgwGRBq062vt8="/>
+        <field:display field="name" id="s_com_edumosphere_lms_domain_Modules_name" object="${modules}" z="ov1t9qLRz8xw1zW1BtG6wMVMfgw="/>
+        <field:display field="cron" id="s_com_edumosphere_lms_domain_Modules_cron" object="${modules}" z="UX5hw1UY7IdxynR7BaGtzhJ3PTA="/>
+        <field:display field="lastcron" id="s_com_edumosphere_lms_domain_Modules_lastcron" object="${modules}" z="MBzTv9Rm1i2ztXNtZR8lna+pYPI="/>
+        <field:display field="search" id="s_com_edumosphere_lms_domain_Modules_search" object="${modules}" z="ye1NosURA6g8UfG8Gioi2nJGFac="/>
+        <field:display field="status" id="s_com_edumosphere_lms_domain_Modules_status" object="${modules}" z="8CXIv7aolr9O8WbIMWO4+2kg1iE="/>
+    </page:show>
+</div>

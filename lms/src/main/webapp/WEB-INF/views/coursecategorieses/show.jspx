@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_edumosphere_lms_domain_CourseCategories" object="${coursecategories}" path="/coursecategorieses" z="PpqW5dCkN1Ql8Z/ehKQiU5uA8Nk=">
+        <field:display field="companyid" id="s_com_edumosphere_lms_domain_CourseCategories_companyid" object="${coursecategories}" z="KJGX9KP58dT/incb2u2HAu8Krho="/>
+        <field:display field="categoryparentid" id="s_com_edumosphere_lms_domain_CourseCategories_categoryparentid" object="${coursecategories}" z="P0+qkJY5jS/HpXMAE+zyjDf0B8U="/>
+        <field:display field="title" id="s_com_edumosphere_lms_domain_CourseCategories_title" object="${coursecategories}" z="8N4Amtk9XSlYeibPuiqS4JHA3ZM="/>
+        <field:display field="categorynumber" id="s_com_edumosphere_lms_domain_CourseCategories_categorynumber" object="${coursecategories}" z="KVR7aibmLhAkdydrlj3a4e3/2fw="/>
+        <field:display field="description" id="s_com_edumosphere_lms_domain_CourseCategories_description" object="${coursecategories}" z="wby/SnLm2rwJ3LF7vSJPawalzpM="/>
+        <field:display field="sortorder" id="s_com_edumosphere_lms_domain_CourseCategories_sortorder" object="${coursecategories}" z="FSbVEuR0SJpyLb5foZUE2Q8sjH8="/>
+        <field:display field="status" id="s_com_edumosphere_lms_domain_CourseCategories_status" object="${coursecategories}" z="9iMz+OIIu5BQ0lx0jFpshg7qvKk="/>
+        <field:display field="createdtime" id="s_com_edumosphere_lms_domain_CourseCategories_createdtime" object="${coursecategories}" z="0cfvqQkg/sOp/mT5zw092SkNW3k="/>
+        <field:display field="modifiedtime" id="s_com_edumosphere_lms_domain_CourseCategories_modifiedtime" object="${coursecategories}" z="zMhPkFd1Z4HLOHocikeiIdtk3oo="/>
+        <field:display field="categorydepth" id="s_com_edumosphere_lms_domain_CourseCategories_categorydepth" object="${coursecategories}" z="4s1WorRLQ9NofPqjrL1KcFZUGeM="/>
+        <field:display field="path" id="s_com_edumosphere_lms_domain_CourseCategories_path" object="${coursecategories}" z="o2MNfB6DXaYzwGfps0WaBkfJTv8="/>
+    </page:show>
+</div>

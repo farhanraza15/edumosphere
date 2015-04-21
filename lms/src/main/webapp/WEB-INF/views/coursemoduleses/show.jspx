@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_edumosphere_lms_domain_CourseModules" object="${coursemodules}" path="/coursemoduleses" z="6BeX1L4aetrjS6acOX+Je35lj9s=">
+        <field:display field="companyid" id="s_com_edumosphere_lms_domain_CourseModules_companyid" object="${coursemodules}" z="D8YgDizOMK02BAvL6Cv96LdYm4M="/>
+        <field:display field="moduleid" id="s_com_edumosphere_lms_domain_CourseModules_moduleid" object="${coursemodules}" z="yH0llHx9r1cPT9EYtfOGXqQs9mI="/>
+        <field:display field="courseid" id="s_com_edumosphere_lms_domain_CourseModules_courseid" object="${coursemodules}" z="mSgnp6BSNEVkl7gxruxcMbrqOow="/>
+        <field:display field="instance" id="s_com_edumosphere_lms_domain_CourseModules_instance" object="${coursemodules}" z="oRP2uoleNJKTkv4pCCZgOQmaHPE="/>
+        <field:display field="section" id="s_com_edumosphere_lms_domain_CourseModules_section" object="${coursemodules}" z="iw2wc7twgua/WIsGYakVJzveyLE="/>
+        <field:display field="idnumber" id="s_com_edumosphere_lms_domain_CourseModules_idnumber" object="${coursemodules}" z="x2b0wqBo3hvhyx4wT+rCUlDwNeM="/>
+        <field:display field="addedon" id="s_com_edumosphere_lms_domain_CourseModules_addedon" object="${coursemodules}" z="syvntPOnhomXADjW7y4Z1VcvWTs="/>
+        <field:display field="score" id="s_com_edumosphere_lms_domain_CourseModules_score" object="${coursemodules}" z="b22FbqYuImw+PXevL3pVon1vbfI="/>
+        <field:display field="indent" id="s_com_edumosphere_lms_domain_CourseModules_indent" object="${coursemodules}" z="yWdtbclxknX7KKV4J1UN4l2JH2g="/>
+        <field:display field="status" id="s_com_edumosphere_lms_domain_CourseModules_status" object="${coursemodules}" z="/Wu7aHl7gmfX34P5YsGeE0GMmtw="/>
+        <field:display field="completion" id="s_com_edumosphere_lms_domain_CourseModules_completion" object="${coursemodules}" z="8Ky+sWNw/+QNm50PebCF+D/58xc="/>
+    </page:show>
+</div>
