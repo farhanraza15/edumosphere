@@ -21,22 +21,29 @@ How tos?
 This is a simple spring roo/maven project so can be imported in eclipse as an existing maven project thats it.
 
 3. How to run the app (edumosphere)
-   Open the command prompt and go to the project location
-   D:\farhan\professional\edumosphere\lms>
+	Open the command prompt and go to the project location
+	D:\farhan\professional\edumosphere\lms>
        
-   Now run following maven command
-   D:\farhan\professional\edumosphere\lms>mvn tomcat:run
+	Now run following maven command
+	D:\farhan\professional\edumosphere\lms>mvn tomcat:run
    
-   This will load some plugins....
+	This will load some plugins....
    
-   Somewhere in the end of of console log will show following:
+	Somewhere in the end of of console log will show following:
    
-   http://localhost:8080/edumosphere
+	http://localhost:8080/edumosphere
    
-   Copy paste in browser...all set to go
+	Copy paste in browser...all set to go
    
-Right now very basic level of spring security integration done. So when ask for the username/pwd use below:
+	Right now very basic level of spring security integration done. So when ask for the username/pwd use below:
 
-admin/admin
+	admin/admin
 
+4. How to do the above steps in STS/eclipse
+	When import is successful then everything should work as is through eclipse roo shell. Make sure that maven is configured.
+
+5. How to handle multiple roo apps in STS/eclipse?
+	a.) There is an option in roo sheel window "open roo shell projects" which can list all roo projects and it will open separate shell window.
+	b.) Right click on roo project in eclipse and then.. Spring Tools > Open Roo Shell	
+	
 If there is any issue faced....I am just a call away.... :-)   
