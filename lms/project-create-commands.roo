@@ -1,0 +1,17 @@
+project --topLevelPackage com.edumosphere.lms --projectName edumosphere
+persistence setup --database MYSQL --provider HIBERNATE
+/*
+* Here exit the roo shell and open the database.properties file to
+* change the DB schema details. After changing use below roo command to
+* to check whether it is pointing to right DB or not
+* roo database introspect
+* Once done run the below command in roo shell to complete the process 
+*/
+
+database reverse engineer --schema edumosphere --package ~.domain
+controller all --package ~.web
+security setup
+perform tests
+exit
+echo "I am exiting roo shell"
+roo
