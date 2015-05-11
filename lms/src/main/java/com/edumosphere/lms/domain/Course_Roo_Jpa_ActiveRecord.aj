@@ -14,8 +14,6 @@ privileged aspect Course_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager Course.entityManager;
     
-    public static final List<String> Course.fieldNames4OrderClauseFilter = java.util.Arrays.asList("");
-    
     public static final EntityManager Course.entityManager() {
         EntityManager em = new Course().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
@@ -30,17 +28,6 @@ privileged aspect Course_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM Course o", Course.class).getResultList();
     }
     
-    public static List<Course> Course.findAllCourses(String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM Course o";
-        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
-            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
-            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
-                jpaQuery = jpaQuery + " " + sortOrder;
-            }
-        }
-        return entityManager().createQuery(jpaQuery, Course.class).getResultList();
-    }
-    
     public static Course Course.findCourse(Long courseid) {
         if (courseid == null) return null;
         return entityManager().find(Course.class, courseid);
@@ -48,17 +35,6 @@ privileged aspect Course_Roo_Jpa_ActiveRecord {
     
     public static List<Course> Course.findCourseEntries(int firstResult, int maxResults) {
         return entityManager().createQuery("SELECT o FROM Course o", Course.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
-    }
-    
-    public static List<Course> Course.findCourseEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM Course o";
-        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
-            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
-            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
-                jpaQuery = jpaQuery + " " + sortOrder;
-            }
-        }
-        return entityManager().createQuery(jpaQuery, Course.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional

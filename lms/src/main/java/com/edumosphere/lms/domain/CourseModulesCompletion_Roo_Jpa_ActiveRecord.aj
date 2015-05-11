@@ -14,8 +14,6 @@ privileged aspect CourseModulesCompletion_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager CourseModulesCompletion.entityManager;
     
-    public static final List<String> CourseModulesCompletion.fieldNames4OrderClauseFilter = java.util.Arrays.asList("");
-    
     public static final EntityManager CourseModulesCompletion.entityManager() {
         EntityManager em = new CourseModulesCompletion().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
@@ -30,17 +28,6 @@ privileged aspect CourseModulesCompletion_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM CourseModulesCompletion o", CourseModulesCompletion.class).getResultList();
     }
     
-    public static List<CourseModulesCompletion> CourseModulesCompletion.findAllCourseModulesCompletions(String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM CourseModulesCompletion o";
-        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
-            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
-            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
-                jpaQuery = jpaQuery + " " + sortOrder;
-            }
-        }
-        return entityManager().createQuery(jpaQuery, CourseModulesCompletion.class).getResultList();
-    }
-    
     public static CourseModulesCompletion CourseModulesCompletion.findCourseModulesCompletion(Long courmodcompid) {
         if (courmodcompid == null) return null;
         return entityManager().find(CourseModulesCompletion.class, courmodcompid);
@@ -48,17 +35,6 @@ privileged aspect CourseModulesCompletion_Roo_Jpa_ActiveRecord {
     
     public static List<CourseModulesCompletion> CourseModulesCompletion.findCourseModulesCompletionEntries(int firstResult, int maxResults) {
         return entityManager().createQuery("SELECT o FROM CourseModulesCompletion o", CourseModulesCompletion.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
-    }
-    
-    public static List<CourseModulesCompletion> CourseModulesCompletion.findCourseModulesCompletionEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM CourseModulesCompletion o";
-        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
-            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
-            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
-                jpaQuery = jpaQuery + " " + sortOrder;
-            }
-        }
-        return entityManager().createQuery(jpaQuery, CourseModulesCompletion.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional

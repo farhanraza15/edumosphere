@@ -14,8 +14,6 @@ privileged aspect Userpermission_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager Userpermission.entityManager;
     
-    public static final List<String> Userpermission.fieldNames4OrderClauseFilter = java.util.Arrays.asList("");
-    
     public static final EntityManager Userpermission.entityManager() {
         EntityManager em = new Userpermission().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
@@ -30,17 +28,6 @@ privileged aspect Userpermission_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM Userpermission o", Userpermission.class).getResultList();
     }
     
-    public static List<Userpermission> Userpermission.findAllUserpermissions(String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM Userpermission o";
-        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
-            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
-            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
-                jpaQuery = jpaQuery + " " + sortOrder;
-            }
-        }
-        return entityManager().createQuery(jpaQuery, Userpermission.class).getResultList();
-    }
-    
     public static Userpermission Userpermission.findUserpermission(Long id) {
         if (id == null) return null;
         return entityManager().find(Userpermission.class, id);
@@ -48,17 +35,6 @@ privileged aspect Userpermission_Roo_Jpa_ActiveRecord {
     
     public static List<Userpermission> Userpermission.findUserpermissionEntries(int firstResult, int maxResults) {
         return entityManager().createQuery("SELECT o FROM Userpermission o", Userpermission.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
-    }
-    
-    public static List<Userpermission> Userpermission.findUserpermissionEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM Userpermission o";
-        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
-            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
-            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
-                jpaQuery = jpaQuery + " " + sortOrder;
-            }
-        }
-        return entityManager().createQuery(jpaQuery, Userpermission.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional
