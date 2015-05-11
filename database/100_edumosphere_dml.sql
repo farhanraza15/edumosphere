@@ -3,8 +3,22 @@
 * DML for company, modules table. If needed we can add some data through this script but it is recommendable that actual data should popualted through app.
 *
 */
+
+/*
+inserts available for company table though it is advisable to create companies through edumosphere web UI.
+*/
 insert into `company`(`companyid`,`companyname`,`description`,`active`,`createtime`,`updatetime`) values (9,'oxford university','Oxford University distance education',1,0,0);
 
+/*
+insert for course_categries table. This is mandatory to run once after schema creation. This will create a tree like structure for course entity and the following insert will work as a parent node.
+*/
+
+INSERT INTO course_categories VALUES (1,'Miscellaneous',null,'MiscellaneousTest',1,10000,1,0,0,1,'/1',10);
+
+
+/*
+
+*/
 insert into `modules`(`moduleid`,`name`,`cron`,`lastcron`,`search`,`status`,`companyid`) values (1,'assign',60,0,'',1,9);
 insert into `modules`(`moduleid`,`name`,`cron`,`lastcron`,`search`,`status`,`companyid`) values (2,'assignment',60,0,'',0,9);
 insert into `modules`(`moduleid`,`name`,`cron`,`lastcron`,`search`,`status`,`companyid`) values (3,'book',0,0,'',1,9);
