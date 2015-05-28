@@ -1,0 +1,20 @@
+CREATE TABLE `assignment_grade` (
+  `asggradedid` bigint(10) NOT NULL AUTO_INCREMENT,
+  `assignmentid` bigint(10) NOT NULL DEFAULT '0',
+  `userid` bigint(10) NOT NULL DEFAULT '0',
+  `companyid` bigint(10) NOT NULL,
+  `createdtime` bigint(10) NOT NULL DEFAULT '0',
+  `modifiedtime` bigint(10) NOT NULL DEFAULT '0',
+  `grader` bigint(10) NOT NULL DEFAULT '0',
+  `grade` decimal(10,5) DEFAULT '0.00000',
+  `attemptnumber` bigint(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`asggradedid`),
+  UNIQUE KEY `assigrad_assuseatt_uix` (`assignmentid`,`userid`,`attemptnumber`),
+  KEY `assigrad_use_ix` (`userid`),
+  KEY `asg_grd_comp_ix` (`companyid`),
+  KEY `assigrad_att_ix` (`attemptnumber`),
+  KEY `assigrad_ass_ix` (`assignmentid`),
+  CONSTRAINT `fk_assigngrade_assignment` FOREIGN KEY (`assignmentid`) REFERENCES `assignment` (`assignmentid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_assigngrade_user` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_asg_grd_comp_ix` FOREIGN KEY (`companyid`) REFERENCES `company` (`companyid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Grading information about a single assignment submission.';
