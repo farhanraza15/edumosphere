@@ -15,7 +15,7 @@ CREATE TABLE `user_enrolment` (
   KEY `userenro_use_ix` (`userid`),
   KEY `usr_enrol_comp_ix` (`companyid`),
   KEY `userenro_mod_ix` (`modifierid`),
-  CONSTRAINT `fk_userenrollment_enrol` FOREIGN KEY (`enrolmentid`) REFERENCES `enrolement` (`enrolmentid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_userenrollment_enrol` FOREIGN KEY (`enrolmentid`) REFERENCES `enrolment` (`enrolmentid`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_userenrollment_user` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_usr_enrol_comp` FOREIGN KEY (`companyid`) REFERENCES `company` (`companyid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Stores users related enrolments data';
