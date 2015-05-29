@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_edumosphere_lms_domain_AssignmentGrade" items="${assignmentgrades}" z="6RNmAtH5Vf7aQA8xf5RwFKluLbc=">
+        <table:table data="${assignmentgrades}" id="l_com_edumosphere_lms_domain_AssignmentGrade" path="/assignmentgrades" typeIdFieldName="asggradedid" z="FC3bXA0eHWPEf1E58EmD1ojALpY=">
+            <table:column id="c_com_edumosphere_lms_domain_AssignmentGrade_assignmentid" property="assignmentid" z="nl1YajaQWbUU8MFKkLednmKHFOE="/>
+            <table:column id="c_com_edumosphere_lms_domain_AssignmentGrade_userid" property="userid" z="02CCrJD7M+g4+aoB9d+zrm1WgHU="/>
+            <table:column id="c_com_edumosphere_lms_domain_AssignmentGrade_companyid" property="companyid" z="KAEcBD73INzO859LStvLdCe1k8c="/>
+            <table:column id="c_com_edumosphere_lms_domain_AssignmentGrade_createdtime" property="createdtime" z="yZqhmN18wItbIY+LfHXOJ877LaQ="/>
+            <table:column id="c_com_edumosphere_lms_domain_AssignmentGrade_modifiedtime" property="modifiedtime" z="kGZwc5FAHou7JcN2dhyTm3QKalc="/>
+            <table:column id="c_com_edumosphere_lms_domain_AssignmentGrade_grader" property="grader" z="vQ1TfB7EuGh5EwH2pE/GOYDg5l4="/>
+        </table:table>
+    </page:list>
+</div>

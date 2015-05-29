@@ -22,16 +22,16 @@ privileged aspect CourseModules_Roo_DbManaged {
     private Set<CourseModulesCompletion> CourseModules.courseModulesCompletions;
     
     @ManyToOne
-    @JoinColumn(name = "companyid", referencedColumnName = "companyid", nullable = false)
-    private Company CourseModules.companyid;
-    
-    @ManyToOne
     @JoinColumn(name = "moduleid", referencedColumnName = "moduleid", nullable = false)
     private Modules CourseModules.moduleid;
     
     @ManyToOne
     @JoinColumn(name = "courseid", referencedColumnName = "courseid", nullable = false)
     private Course CourseModules.courseid;
+    
+    @ManyToOne
+    @JoinColumn(name = "companyid", referencedColumnName = "companyid", nullable = false)
+    private Company CourseModules.companyid;
     
     @Column(name = "instance")
     @NotNull
@@ -72,14 +72,6 @@ privileged aspect CourseModules_Roo_DbManaged {
         this.courseModulesCompletions = courseModulesCompletions;
     }
     
-    public Company CourseModules.getCompanyid() {
-        return companyid;
-    }
-    
-    public void CourseModules.setCompanyid(Company companyid) {
-        this.companyid = companyid;
-    }
-    
     public Modules CourseModules.getModuleid() {
         return moduleid;
     }
@@ -94,6 +86,14 @@ privileged aspect CourseModules_Roo_DbManaged {
     
     public void CourseModules.setCourseid(Course courseid) {
         this.courseid = courseid;
+    }
+    
+    public Company CourseModules.getCompanyid() {
+        return companyid;
+    }
+    
+    public void CourseModules.setCompanyid(Company companyid) {
+        this.companyid = companyid;
     }
     
     public Long CourseModules.getInstance() {

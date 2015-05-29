@@ -34,5 +34,9 @@
         <field:input field="timezone" id="c_com_edumosphere_lms_domain_User_timezone" required="true" z="2kUZatxpaA0pdA9BXKOzEHwYzw0="/>
         <field:input field="currentlogin" id="c_com_edumosphere_lms_domain_User_currentlogin" required="true" validationMessageCode="field_invalid_integer" z="qaU5lFPOk9TFf7qrafUnmeqhmoE="/>
         <field:checkbox field="autosubscribe" id="c_com_edumosphere_lms_domain_User_autosubscribe" z="XDzBocYc1Osd8B0LL2fNSNVidXo="/>
+        <field:simple field="assignmentGrades" id="c_com_edumosphere_lms_domain_User_assignmentGrades" messageCode="entity_reference_not_managed" messageCodeAttribute="Assignment Grade" z="z+4C1IB6lMGin88VhO111y/vpAg="/>
+        <field:simple field="assignmentUserMappings" id="c_com_edumosphere_lms_domain_User_assignmentUserMappings" messageCode="entity_reference_not_managed" messageCodeAttribute="Assignment User Mapping" z="fgOFFFfBhcSgOYwc26+/OTFUOLw="/>
+        <field:simple field="courseGroupMembers" id="c_com_edumosphere_lms_domain_User_courseGroupMembers" messageCode="entity_reference_not_managed" messageCodeAttribute="Course Group Member" z="NrwY+bJw6Zj3I2v35Xhrt22wGsA="/>
+        <field:simple field="userEnrolments" id="c_com_edumosphere_lms_domain_User_userEnrolments" messageCode="entity_reference_not_managed" messageCodeAttribute="User Enrolment" z="RzapLZ7ZdB+TzsK67V6mnII3y0U="/>
     </form:update>
 </div>

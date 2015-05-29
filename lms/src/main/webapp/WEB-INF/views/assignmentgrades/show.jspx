@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_edumosphere_lms_domain_AssignmentGrade" object="${assignmentgrade}" path="/assignmentgrades" z="p3OmShlvohjRNLpFyEiIojaRt3k=">
+        <field:display field="assignmentid" id="s_com_edumosphere_lms_domain_AssignmentGrade_assignmentid" object="${assignmentgrade}" z="dg++xgGrmuZyFRXbwuNR7aDgG/w="/>
+        <field:display field="userid" id="s_com_edumosphere_lms_domain_AssignmentGrade_userid" object="${assignmentgrade}" z="LdzlG5/ccUYmPVzp528g7hsN3ms="/>
+        <field:display field="companyid" id="s_com_edumosphere_lms_domain_AssignmentGrade_companyid" object="${assignmentgrade}" z="9o0KlGHGbsZlerbbtfubouD1tqI="/>
+        <field:display field="createdtime" id="s_com_edumosphere_lms_domain_AssignmentGrade_createdtime" object="${assignmentgrade}" z="YloPFPy0fByfbHxplPtVMc+AxV8="/>
+        <field:display field="modifiedtime" id="s_com_edumosphere_lms_domain_AssignmentGrade_modifiedtime" object="${assignmentgrade}" z="XLHIiX0Ive4jJtGKzBEzPs+yh9U="/>
+        <field:display field="grader" id="s_com_edumosphere_lms_domain_AssignmentGrade_grader" object="${assignmentgrade}" z="MeFvrGI/4OumAvAGu//SR4W1HlM="/>
+        <field:display field="grade" id="s_com_edumosphere_lms_domain_AssignmentGrade_grade" object="${assignmentgrade}" z="T59vAd9qHsO1AVFb3lyj+6f+2f0="/>
+        <field:display field="attemptnumber" id="s_com_edumosphere_lms_domain_AssignmentGrade_attemptnumber" object="${assignmentgrade}" z="JB5HZXjM2LH7SO2aU8LFjjCHwxs="/>
+    </page:show>
+</div>

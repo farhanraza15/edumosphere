@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_edumosphere_lms_domain_Assignment" object="${assignment}" path="/assignments" z="nGEcpUbBDRev5GsuilBJGKLw5dQ=">
+        <field:display field="courseid" id="s_com_edumosphere_lms_domain_Assignment_courseid" object="${assignment}" z="8oaxYSy2PP6KWfPyY0jln5zLlk4="/>
+        <field:display field="name" id="s_com_edumosphere_lms_domain_Assignment_name" object="${assignment}" z="7h1kIc7H/Ef7yZcSLXoDGpF0510="/>
+        <field:display field="intro" id="s_com_edumosphere_lms_domain_Assignment_intro" object="${assignment}" z="u2Bzih2RLuMqaPOxQzNfxAit1kc="/>
+        <field:display field="introformat" id="s_com_edumosphere_lms_domain_Assignment_introformat" object="${assignment}" z="UBeIds9P1kHf39LGFkqBvyKC0xg="/>
+        <field:display field="assignmenttype" id="s_com_edumosphere_lms_domain_Assignment_assignmenttype" object="${assignment}" z="xkBfo7TdXeiaa5g8SbsgSxtniB8="/>
+        <field:display field="resubmit" id="s_com_edumosphere_lms_domain_Assignment_resubmit" object="${assignment}" z="RfFupqhsGq2fu0s4rw/0s/vb+6Y="/>
+        <field:display field="preventlate" id="s_com_edumosphere_lms_domain_Assignment_preventlate" object="${assignment}" z="lQ852HR6yfVYlOEtowdmIlV5428="/>
+        <field:display field="emailteachers" id="s_com_edumosphere_lms_domain_Assignment_emailteachers" object="${assignment}" z="WM6htakQJmeitGAPJnmNxJ8LmrY="/>
+        <field:display field="var1" id="s_com_edumosphere_lms_domain_Assignment_var1" object="${assignment}" z="aC0IDGxrVTj0qPkUs8LcVAsFy1o="/>
+        <field:display field="var2" id="s_com_edumosphere_lms_domain_Assignment_var2" object="${assignment}" z="4kOs+nJWVBvpN8r6X7cgUA85VqE="/>
+        <field:display field="var3" id="s_com_edumosphere_lms_domain_Assignment_var3" object="${assignment}" z="O2Xm5dlkMSeM9tjdQqcy0d3kEIw="/>
+        <field:display field="var4" id="s_com_edumosphere_lms_domain_Assignment_var4" object="${assignment}" z="O3B+6AfLZFtk/a5MAmiHe+aGMLE="/>
+        <field:display field="var5" id="s_com_edumosphere_lms_domain_Assignment_var5" object="${assignment}" z="zO2j3zB48Ks61MZuYuM3Zj5HveY="/>
+        <field:display field="maxbytes" id="s_com_edumosphere_lms_domain_Assignment_maxbytes" object="${assignment}" z="G75THuAkO8FB0OzZMPCIucNZGqY="/>
+        <field:display field="timedue" id="s_com_edumosphere_lms_domain_Assignment_timedue" object="${assignment}" z="mHWX3f8lWPULhobcUpVCuvZ67hg="/>
+        <field:display field="timeavailable" id="s_com_edumosphere_lms_domain_Assignment_timeavailable" object="${assignment}" z="ACGuXvOd5eFfstVtDJCN3ku3oSg="/>
+        <field:display field="grade" id="s_com_edumosphere_lms_domain_Assignment_grade" object="${assignment}" z="r+0XYDVi6AeYhiy2YlTbORvssKs="/>
+        <field:display field="timemodified" id="s_com_edumosphere_lms_domain_Assignment_timemodified" object="${assignment}" z="zW9pkyGRDV6ZT4eZps9fmtqbn1g="/>
+    </page:show>
+</div>

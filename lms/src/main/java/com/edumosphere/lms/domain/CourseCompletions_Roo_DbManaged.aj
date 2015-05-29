@@ -15,16 +15,16 @@ import javax.validation.constraints.NotNull;
 privileged aspect CourseCompletions_Roo_DbManaged {
     
     @ManyToOne
-    @JoinColumn(name = "companyid", referencedColumnName = "companyid", nullable = false)
-    private Company CourseCompletions.companyid;
+    @JoinColumn(name = "courseid", referencedColumnName = "courseid", nullable = false)
+    private Course CourseCompletions.courseid;
     
     @ManyToOne
     @JoinColumn(name = "userid", referencedColumnName = "userid", nullable = false)
     private User CourseCompletions.userid;
     
     @ManyToOne
-    @JoinColumn(name = "courseid", referencedColumnName = "courseid", nullable = false)
-    private Course CourseCompletions.courseid;
+    @JoinColumn(name = "companyid", referencedColumnName = "companyid", nullable = false)
+    private Company CourseCompletions.companyid;
     
     @Column(name = "timeenrolled")
     @NotNull
@@ -37,12 +37,12 @@ privileged aspect CourseCompletions_Roo_DbManaged {
     @Column(name = "timecompleted")
     private Long CourseCompletions.timecompleted;
     
-    public Company CourseCompletions.getCompanyid() {
-        return companyid;
+    public Course CourseCompletions.getCourseid() {
+        return courseid;
     }
     
-    public void CourseCompletions.setCompanyid(Company companyid) {
-        this.companyid = companyid;
+    public void CourseCompletions.setCourseid(Course courseid) {
+        this.courseid = courseid;
     }
     
     public User CourseCompletions.getUserid() {
@@ -53,12 +53,12 @@ privileged aspect CourseCompletions_Roo_DbManaged {
         this.userid = userid;
     }
     
-    public Course CourseCompletions.getCourseid() {
-        return courseid;
+    public Company CourseCompletions.getCompanyid() {
+        return companyid;
     }
     
-    public void CourseCompletions.setCourseid(Course courseid) {
-        this.courseid = courseid;
+    public void CourseCompletions.setCompanyid(Company companyid) {
+        this.companyid = companyid;
     }
     
     public Long CourseCompletions.getTimeenrolled() {

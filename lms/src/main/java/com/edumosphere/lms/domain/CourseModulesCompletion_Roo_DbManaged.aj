@@ -15,16 +15,16 @@ import javax.validation.constraints.NotNull;
 privileged aspect CourseModulesCompletion_Roo_DbManaged {
     
     @ManyToOne
+    @JoinColumn(name = "coursemoduleid", referencedColumnName = "coursemoduleid", nullable = false)
+    private CourseModules CourseModulesCompletion.coursemoduleid;
+    
+    @ManyToOne
     @JoinColumn(name = "companyid", referencedColumnName = "companyid", nullable = false)
     private Company CourseModulesCompletion.companyid;
     
     @ManyToOne
     @JoinColumn(name = "userid", referencedColumnName = "userid", nullable = false)
     private User CourseModulesCompletion.userid;
-    
-    @ManyToOne
-    @JoinColumn(name = "coursemoduleid", referencedColumnName = "coursemoduleid", nullable = false)
-    private CourseModules CourseModulesCompletion.coursemoduleid;
     
     @Column(name = "completionstate")
     @NotNull
@@ -36,6 +36,14 @@ privileged aspect CourseModulesCompletion_Roo_DbManaged {
     @Column(name = "modifiedtime")
     @NotNull
     private Long CourseModulesCompletion.modifiedtime;
+    
+    public CourseModules CourseModulesCompletion.getCoursemoduleid() {
+        return coursemoduleid;
+    }
+    
+    public void CourseModulesCompletion.setCoursemoduleid(CourseModules coursemoduleid) {
+        this.coursemoduleid = coursemoduleid;
+    }
     
     public Company CourseModulesCompletion.getCompanyid() {
         return companyid;
@@ -51,14 +59,6 @@ privileged aspect CourseModulesCompletion_Roo_DbManaged {
     
     public void CourseModulesCompletion.setUserid(User userid) {
         this.userid = userid;
-    }
-    
-    public CourseModules CourseModulesCompletion.getCoursemoduleid() {
-        return coursemoduleid;
-    }
-    
-    public void CourseModulesCompletion.setCoursemoduleid(CourseModules coursemoduleid) {
-        this.coursemoduleid = coursemoduleid;
     }
     
     public boolean CourseModulesCompletion.isCompletionstate() {

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_edumosphere_lms_domain_Enrolment" items="${enrolments}" z="neJbWNcim7RILOY0sDyZH0Lxm7o=">
+        <table:table data="${enrolments}" id="l_com_edumosphere_lms_domain_Enrolment" path="/enrolments" typeIdFieldName="enrolmentid" z="Sy0M3TiXkAOmeclcaZFrcJYKWC8=">
+            <table:column id="c_com_edumosphere_lms_domain_Enrolment_courseid" property="courseid" z="PDUme2/DSbh400zqHM65hbCgELU="/>
+            <table:column id="c_com_edumosphere_lms_domain_Enrolment_enrol" property="enrol" z="xCskp+pWxxXC4N4S84EhEtiYqvo="/>
+            <table:column id="c_com_edumosphere_lms_domain_Enrolment_status" property="status" z="qbvz7jlGWl0wCJ3Sc1OzBLGw28k="/>
+            <table:column id="c_com_edumosphere_lms_domain_Enrolment_sortorder" property="sortorder" z="vZUchBXWooiaG+L1ubqjDI5vsU4="/>
+            <table:column id="c_com_edumosphere_lms_domain_Enrolment_name" property="name" z="ZhUzYCr6VotlsUFVPF6DJQY6csE="/>
+        </table:table>
+    </page:list>
+</div>

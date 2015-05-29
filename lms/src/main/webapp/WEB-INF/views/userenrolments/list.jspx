@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_edumosphere_lms_domain_UserEnrolment" items="${userenrolments}" z="BC8uLywJ6dgXLbdAGoR+fNIuNCA=">
+        <table:table data="${userenrolments}" id="l_com_edumosphere_lms_domain_UserEnrolment" path="/userenrolments" typeIdFieldName="userenrolmentid" z="XareTN56kAaVG8Ha9GoSzOcSkfs=">
+            <table:column id="c_com_edumosphere_lms_domain_UserEnrolment_enrolmentid" property="enrolmentid" z="fbSfCsLkd9i57Loj9j6QSGqKSus="/>
+            <table:column id="c_com_edumosphere_lms_domain_UserEnrolment_userid" property="userid" z="K+NAFrlZO8X2Byqe6nrbDOndebQ="/>
+            <table:column id="c_com_edumosphere_lms_domain_UserEnrolment_companyid" property="companyid" z="d1AXUvqLyrDfqaLYSQKtsqFaqIk="/>
+            <table:column id="c_com_edumosphere_lms_domain_UserEnrolment_status" property="status" z="8fPOTAo6AiIqEepVUwrAB8hABUQ="/>
+            <table:column id="c_com_edumosphere_lms_domain_UserEnrolment_timestart" property="timestart" z="kCYPwHXiBbP9TbeH4JxNtgFdaB4="/>
+            <table:column id="c_com_edumosphere_lms_domain_UserEnrolment_timeend" property="timeend" z="ntVNnhk3bkb7G4VMwQs+SxnrkdY="/>
+        </table:table>
+    </page:list>
+</div>

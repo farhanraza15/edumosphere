@@ -3,11 +3,15 @@
 
 package com.edumosphere.lms.domain;
 
+import com.edumosphere.lms.domain.AssignmentGrade;
+import com.edumosphere.lms.domain.AssignmentUserMapping;
 import com.edumosphere.lms.domain.Company;
 import com.edumosphere.lms.domain.CourseCompletions;
+import com.edumosphere.lms.domain.CourseGroupMember;
 import com.edumosphere.lms.domain.CourseModulesCompletion;
 import com.edumosphere.lms.domain.Role;
 import com.edumosphere.lms.domain.User;
+import com.edumosphere.lms.domain.UserEnrolment;
 import com.edumosphere.lms.domain.Userpermission;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -20,10 +24,22 @@ import javax.validation.constraints.NotNull;
 privileged aspect User_Roo_DbManaged {
     
     @OneToMany(mappedBy = "userid", cascade = CascadeType.ALL)
+    private Set<AssignmentGrade> User.assignmentGrades;
+    
+    @OneToMany(mappedBy = "userid", cascade = CascadeType.ALL)
+    private Set<AssignmentUserMapping> User.assignmentUserMappings;
+    
+    @OneToMany(mappedBy = "userid", cascade = CascadeType.ALL)
     private Set<CourseCompletions> User.courseCompletionss;
     
     @OneToMany(mappedBy = "userid", cascade = CascadeType.ALL)
+    private Set<CourseGroupMember> User.courseGroupMembers;
+    
+    @OneToMany(mappedBy = "userid", cascade = CascadeType.ALL)
     private Set<CourseModulesCompletion> User.courseModulesCompletions;
+    
+    @OneToMany(mappedBy = "userid", cascade = CascadeType.ALL)
+    private Set<UserEnrolment> User.userEnrolments;
     
     @OneToMany(mappedBy = "userid", cascade = CascadeType.ALL)
     private Set<Userpermission> User.userpermissions;
@@ -140,6 +156,22 @@ privileged aspect User_Roo_DbManaged {
     @NotNull
     private boolean User.autosubscribe;
     
+    public Set<AssignmentGrade> User.getAssignmentGrades() {
+        return assignmentGrades;
+    }
+    
+    public void User.setAssignmentGrades(Set<AssignmentGrade> assignmentGrades) {
+        this.assignmentGrades = assignmentGrades;
+    }
+    
+    public Set<AssignmentUserMapping> User.getAssignmentUserMappings() {
+        return assignmentUserMappings;
+    }
+    
+    public void User.setAssignmentUserMappings(Set<AssignmentUserMapping> assignmentUserMappings) {
+        this.assignmentUserMappings = assignmentUserMappings;
+    }
+    
     public Set<CourseCompletions> User.getCourseCompletionss() {
         return courseCompletionss;
     }
@@ -148,12 +180,28 @@ privileged aspect User_Roo_DbManaged {
         this.courseCompletionss = courseCompletionss;
     }
     
+    public Set<CourseGroupMember> User.getCourseGroupMembers() {
+        return courseGroupMembers;
+    }
+    
+    public void User.setCourseGroupMembers(Set<CourseGroupMember> courseGroupMembers) {
+        this.courseGroupMembers = courseGroupMembers;
+    }
+    
     public Set<CourseModulesCompletion> User.getCourseModulesCompletions() {
         return courseModulesCompletions;
     }
     
     public void User.setCourseModulesCompletions(Set<CourseModulesCompletion> courseModulesCompletions) {
         this.courseModulesCompletions = courseModulesCompletions;
+    }
+    
+    public Set<UserEnrolment> User.getUserEnrolments() {
+        return userEnrolments;
+    }
+    
+    public void User.setUserEnrolments(Set<UserEnrolment> userEnrolments) {
+        this.userEnrolments = userEnrolments;
     }
     
     public Set<Userpermission> User.getUserpermissions() {

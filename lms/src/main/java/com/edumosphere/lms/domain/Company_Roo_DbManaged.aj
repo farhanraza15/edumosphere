@@ -3,16 +3,20 @@
 
 package com.edumosphere.lms.domain;
 
+import com.edumosphere.lms.domain.AssignmentGrade;
+import com.edumosphere.lms.domain.AssignmentUserMapping;
 import com.edumosphere.lms.domain.Company;
 import com.edumosphere.lms.domain.Course;
 import com.edumosphere.lms.domain.CourseCategories;
 import com.edumosphere.lms.domain.CourseCompletions;
 import com.edumosphere.lms.domain.CourseFormatOptions;
+import com.edumosphere.lms.domain.CourseGroupMember;
 import com.edumosphere.lms.domain.CourseModules;
 import com.edumosphere.lms.domain.CourseModulesCompletion;
 import com.edumosphere.lms.domain.CourseSections;
 import com.edumosphere.lms.domain.Modules;
 import com.edumosphere.lms.domain.User;
+import com.edumosphere.lms.domain.UserEnrolment;
 import com.edumosphere.lms.domain.Userpermission;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -21,6 +25,12 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 privileged aspect Company_Roo_DbManaged {
+    
+    @OneToMany(mappedBy = "companyid")
+    private Set<AssignmentGrade> Company.assignmentGrades;
+    
+    @OneToMany(mappedBy = "companyid")
+    private Set<AssignmentUserMapping> Company.assignmentUserMappings;
     
     @OneToMany(mappedBy = "companyid")
     private Set<Course> Company.courses;
@@ -33,6 +43,9 @@ privileged aspect Company_Roo_DbManaged {
     
     @OneToMany(mappedBy = "companyid")
     private Set<CourseFormatOptions> Company.courseFormatOptionss;
+    
+    @OneToMany(mappedBy = "companyid")
+    private Set<CourseGroupMember> Company.courseGroupMembers;
     
     @OneToMany(mappedBy = "companyid")
     private Set<CourseModules> Company.courseModuleses;
@@ -48,6 +61,9 @@ privileged aspect Company_Roo_DbManaged {
     
     @OneToMany(mappedBy = "companyid", cascade = CascadeType.ALL)
     private Set<User> Company.users;
+    
+    @OneToMany(mappedBy = "companyid")
+    private Set<UserEnrolment> Company.userEnrolments;
     
     @OneToMany(mappedBy = "companyid", cascade = CascadeType.ALL)
     private Set<Userpermission> Company.userpermissions;
@@ -71,6 +87,22 @@ privileged aspect Company_Roo_DbManaged {
     @Column(name = "updatetime")
     @NotNull
     private Long Company.updatetime;
+    
+    public Set<AssignmentGrade> Company.getAssignmentGrades() {
+        return assignmentGrades;
+    }
+    
+    public void Company.setAssignmentGrades(Set<AssignmentGrade> assignmentGrades) {
+        this.assignmentGrades = assignmentGrades;
+    }
+    
+    public Set<AssignmentUserMapping> Company.getAssignmentUserMappings() {
+        return assignmentUserMappings;
+    }
+    
+    public void Company.setAssignmentUserMappings(Set<AssignmentUserMapping> assignmentUserMappings) {
+        this.assignmentUserMappings = assignmentUserMappings;
+    }
     
     public Set<Course> Company.getCourses() {
         return courses;
@@ -102,6 +134,14 @@ privileged aspect Company_Roo_DbManaged {
     
     public void Company.setCourseFormatOptionss(Set<CourseFormatOptions> courseFormatOptionss) {
         this.courseFormatOptionss = courseFormatOptionss;
+    }
+    
+    public Set<CourseGroupMember> Company.getCourseGroupMembers() {
+        return courseGroupMembers;
+    }
+    
+    public void Company.setCourseGroupMembers(Set<CourseGroupMember> courseGroupMembers) {
+        this.courseGroupMembers = courseGroupMembers;
     }
     
     public Set<CourseModules> Company.getCourseModuleses() {
@@ -142,6 +182,14 @@ privileged aspect Company_Roo_DbManaged {
     
     public void Company.setUsers(Set<User> users) {
         this.users = users;
+    }
+    
+    public Set<UserEnrolment> Company.getUserEnrolments() {
+        return userEnrolments;
+    }
+    
+    public void Company.setUserEnrolments(Set<UserEnrolment> userEnrolments) {
+        this.userEnrolments = userEnrolments;
     }
     
     public Set<Userpermission> Company.getUserpermissions() {

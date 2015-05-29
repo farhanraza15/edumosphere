@@ -14,6 +14,8 @@ privileged aspect CourseFormatOptions_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager CourseFormatOptions.entityManager;
     
+    public static final List<String> CourseFormatOptions.fieldNames4OrderClauseFilter = java.util.Arrays.asList("");
+    
     public static final EntityManager CourseFormatOptions.entityManager() {
         EntityManager em = new CourseFormatOptions().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
@@ -28,6 +30,17 @@ privileged aspect CourseFormatOptions_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT o FROM CourseFormatOptions o", CourseFormatOptions.class).getResultList();
     }
     
+    public static List<CourseFormatOptions> CourseFormatOptions.findAllCourseFormatOptionses(String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM CourseFormatOptions o";
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                jpaQuery = jpaQuery + " " + sortOrder;
+            }
+        }
+        return entityManager().createQuery(jpaQuery, CourseFormatOptions.class).getResultList();
+    }
+    
     public static CourseFormatOptions CourseFormatOptions.findCourseFormatOptions(Long formatoptionid) {
         if (formatoptionid == null) return null;
         return entityManager().find(CourseFormatOptions.class, formatoptionid);
@@ -35,6 +48,17 @@ privileged aspect CourseFormatOptions_Roo_Jpa_ActiveRecord {
     
     public static List<CourseFormatOptions> CourseFormatOptions.findCourseFormatOptionsEntries(int firstResult, int maxResults) {
         return entityManager().createQuery("SELECT o FROM CourseFormatOptions o", CourseFormatOptions.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+    
+    public static List<CourseFormatOptions> CourseFormatOptions.findCourseFormatOptionsEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM CourseFormatOptions o";
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                jpaQuery = jpaQuery + " " + sortOrder;
+            }
+        }
+        return entityManager().createQuery(jpaQuery, CourseFormatOptions.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional

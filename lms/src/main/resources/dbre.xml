@@ -8,6 +8,118 @@
     <option key="disableVersionFields" value="false"/>
     <option key="disableGeneratedIdentifiers" value="false"/>
     <option key="testAutomatically" value="false"/>
+    <table name="assignment">
+        <column name="assignmentid" primaryKey="true" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="courseid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="name" primaryKey="false" required="true" scale="0" size="255" type="12,VARCHAR"/>
+        <column name="intro" primaryKey="false" required="true" scale="0" size="2147483647" type="-1,LONGTEXT"/>
+        <column name="introformat" primaryKey="false" required="true" scale="0" size="5" type="5,SMALLINT"/>
+        <column name="assignmenttype" primaryKey="false" required="true" scale="0" size="50" type="12,VARCHAR"/>
+        <column name="resubmit" primaryKey="false" required="true" scale="0" size="3" type="-6,TINYINT"/>
+        <column name="preventlate" primaryKey="false" required="true" scale="0" size="3" type="-6,TINYINT"/>
+        <column name="emailteachers" primaryKey="false" required="true" scale="0" size="3" type="-6,TINYINT"/>
+        <column name="var1" primaryKey="false" required="false" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="var2" primaryKey="false" required="false" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="var3" primaryKey="false" required="false" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="var4" primaryKey="false" required="false" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="var5" primaryKey="false" required="false" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="maxbytes" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="timedue" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="timeavailable" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="grade" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="timemodified" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <foreign-key foreignTable="course" name="fk_assignment_course" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="false"/>
+            <reference foreign="courseid" local="courseid"/>
+        </foreign-key>
+        <foreign-key foreignTable="assignment_grade" name="fk_assigngrade_assignment" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="true"/>
+            <reference foreign="assignmentid" local="assignmentid"/>
+        </foreign-key>
+        <foreign-key foreignTable="assignment_user_mapping" name="fk_assignmapping_assignment" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="true"/>
+            <reference foreign="assignmentid" local="assignmentid"/>
+        </foreign-key>
+        <unique name="PRIMARY">
+            <unique-column name="assignmentid"/>
+        </unique>
+        <index name="assi_cou2_ix">
+            <index-column name="courseid"/>
+        </index>
+    </table>
+    <table name="assignment_grade">
+        <column name="asggradedid" primaryKey="true" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="assignmentid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="userid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="companyid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="createdtime" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="modifiedtime" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="grader" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="grade" primaryKey="false" required="false" scale="5" size="10" type="3,DECIMAL"/>
+        <column name="attemptnumber" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <foreign-key foreignTable="assignment" name="fk_assigngrade_assignment" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="false"/>
+            <reference foreign="assignmentid" local="assignmentid"/>
+        </foreign-key>
+        <foreign-key foreignTable="user" name="fk_assigngrade_user" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="false"/>
+            <reference foreign="userid" local="userid"/>
+        </foreign-key>
+        <foreign-key foreignTable="company" name="fk_asg_grd_comp_ix" onDelete="none" onUpdate="none">
+            <option key="exported" value="false"/>
+            <reference foreign="companyid" local="companyid"/>
+        </foreign-key>
+        <unique name="PRIMARY">
+            <unique-column name="asggradedid"/>
+        </unique>
+        <unique name="assigrad_assuseatt_uix">
+            <unique-column name="assignmentid"/>
+            <unique-column name="userid"/>
+            <unique-column name="attemptnumber"/>
+        </unique>
+        <index name="assigrad_use_ix">
+            <index-column name="userid"/>
+        </index>
+        <index name="asg_grd_comp_ix">
+            <index-column name="companyid"/>
+        </index>
+        <index name="assigrad_att_ix">
+            <index-column name="attemptnumber"/>
+        </index>
+        <index name="assigrad_ass_ix">
+            <index-column name="assignmentid"/>
+        </index>
+    </table>
+    <table name="assignment_user_mapping">
+        <column name="asgusrmapid" primaryKey="true" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="assignmentid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="userid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="companyid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <foreign-key foreignTable="assignment" name="fk_assignmapping_assignment" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="false"/>
+            <reference foreign="assignmentid" local="assignmentid"/>
+        </foreign-key>
+        <foreign-key foreignTable="user" name="fk_assignmapping_user" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="false"/>
+            <reference foreign="userid" local="userid"/>
+        </foreign-key>
+        <foreign-key foreignTable="company" name="fk_asg_cour_company" onDelete="none" onUpdate="none">
+            <option key="exported" value="false"/>
+            <reference foreign="companyid" local="companyid"/>
+        </foreign-key>
+        <unique name="PRIMARY">
+            <unique-column name="asgusrmapid"/>
+        </unique>
+        <index name="assiusermapp_ass_ix">
+            <index-column name="assignmentid"/>
+        </index>
+        <index name="assiusermapp_use_ix">
+            <index-column name="userid"/>
+        </index>
+        <index name="fk_asg_cour_company">
+            <index-column name="companyid"/>
+        </index>
+    </table>
     <table name="company">
         <column name="companyid" primaryKey="true" required="true" scale="0" size="19" type="-5,BIGINT"/>
         <column name="companyname" primaryKey="false" required="true" scale="0" size="255" type="12,VARCHAR"/>
@@ -15,6 +127,14 @@
         <column name="active" primaryKey="false" required="true" scale="0" size="0" type="-7,BIT"/>
         <column name="createtime" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
         <column name="updatetime" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <foreign-key foreignTable="assignment_grade" name="fk_asg_grd_comp_ix" onDelete="none" onUpdate="none">
+            <option key="exported" value="true"/>
+            <reference foreign="companyid" local="companyid"/>
+        </foreign-key>
+        <foreign-key foreignTable="assignment_user_mapping" name="fk_asg_cour_company" onDelete="none" onUpdate="none">
+            <option key="exported" value="true"/>
+            <reference foreign="companyid" local="companyid"/>
+        </foreign-key>
         <foreign-key foreignTable="course" name="fk_course_company" onDelete="none" onUpdate="none">
             <option key="exported" value="true"/>
             <reference foreign="companyid" local="companyid"/>
@@ -28,6 +148,10 @@
             <reference foreign="companyid" local="companyid"/>
         </foreign-key>
         <foreign-key foreignTable="course_format_options" name="fk_cour_form_opt_company" onDelete="none" onUpdate="none">
+            <option key="exported" value="true"/>
+            <reference foreign="companyid" local="companyid"/>
+        </foreign-key>
+        <foreign-key foreignTable="course_group_member" name="fk_grp_cour_company" onDelete="none" onUpdate="none">
             <option key="exported" value="true"/>
             <reference foreign="companyid" local="companyid"/>
         </foreign-key>
@@ -48,6 +172,10 @@
             <reference foreign="companyid" local="companyid"/>
         </foreign-key>
         <foreign-key foreignTable="user" name="fk_user_companyid" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="true"/>
+            <reference foreign="companyid" local="companyid"/>
+        </foreign-key>
+        <foreign-key foreignTable="user_enrolment" name="fk_usr_enrol_comp" onDelete="none" onUpdate="none">
             <option key="exported" value="true"/>
             <reference foreign="companyid" local="companyid"/>
         </foreign-key>
@@ -87,6 +215,10 @@
             <option key="exported" value="false"/>
             <reference foreign="companyid" local="companyid"/>
         </foreign-key>
+        <foreign-key foreignTable="assignment" name="fk_assignment_course" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="true"/>
+            <reference foreign="courseid" local="courseid"/>
+        </foreign-key>
         <foreign-key foreignTable="course_completions" name="fk_course_completion" onDelete="cascade" onUpdate="cascade">
             <option key="exported" value="true"/>
             <reference foreign="courseid" local="courseid"/>
@@ -95,11 +227,19 @@
             <option key="exported" value="true"/>
             <reference foreign="courseid" local="courseid"/>
         </foreign-key>
+        <foreign-key foreignTable="course_group" name="fk_group_course" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="true"/>
+            <reference foreign="courseid" local="courseid"/>
+        </foreign-key>
         <foreign-key foreignTable="course_modules" name="fk_course_module_course" onDelete="cascade" onUpdate="cascade">
             <option key="exported" value="true"/>
             <reference foreign="courseid" local="courseid"/>
         </foreign-key>
         <foreign-key foreignTable="course_sections" name="fk_course_section" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="true"/>
+            <reference foreign="courseid" local="courseid"/>
+        </foreign-key>
+        <foreign-key foreignTable="enrolment" name="fk_enrol_course" onDelete="cascade" onUpdate="cascade">
             <option key="exported" value="true"/>
             <reference foreign="courseid" local="courseid"/>
         </foreign-key>
@@ -169,17 +309,17 @@
         <column name="timestarted" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
         <column name="timecompleted" primaryKey="false" required="false" scale="0" size="19" type="-5,BIGINT"/>
         <column name="companyid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
-        <foreign-key foreignTable="company" name="fk_cour_comp_company" onDelete="none" onUpdate="none">
+        <foreign-key foreignTable="course" name="fk_course_completion" onDelete="cascade" onUpdate="cascade">
             <option key="exported" value="false"/>
-            <reference foreign="companyid" local="companyid"/>
+            <reference foreign="courseid" local="courseid"/>
         </foreign-key>
         <foreign-key foreignTable="user" name="fk_course_comp_user" onDelete="cascade" onUpdate="cascade">
             <option key="exported" value="false"/>
             <reference foreign="userid" local="userid"/>
         </foreign-key>
-        <foreign-key foreignTable="course" name="fk_course_completion" onDelete="cascade" onUpdate="cascade">
+        <foreign-key foreignTable="company" name="fk_cour_comp_company" onDelete="none" onUpdate="none">
             <option key="exported" value="false"/>
-            <reference foreign="courseid" local="courseid"/>
+            <reference foreign="companyid" local="companyid"/>
         </foreign-key>
         <unique name="PRIMARY">
             <unique-column name="coursecompid"/>
@@ -209,13 +349,13 @@
         <column name="name" primaryKey="false" required="true" scale="0" size="100" type="12,VARCHAR"/>
         <column name="value" primaryKey="false" required="false" scale="0" size="2147483647" type="-1,LONGTEXT"/>
         <column name="companyid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
-        <foreign-key foreignTable="company" name="fk_cour_form_opt_company" onDelete="none" onUpdate="none">
-            <option key="exported" value="false"/>
-            <reference foreign="companyid" local="companyid"/>
-        </foreign-key>
         <foreign-key foreignTable="course" name="fk_course_formats" onDelete="cascade" onUpdate="cascade">
             <option key="exported" value="false"/>
             <reference foreign="courseid" local="courseid"/>
+        </foreign-key>
+        <foreign-key foreignTable="company" name="fk_cour_form_opt_company" onDelete="none" onUpdate="none">
+            <option key="exported" value="false"/>
+            <reference foreign="companyid" local="companyid"/>
         </foreign-key>
         <unique name="PRIMARY">
             <unique-column name="formatoptionid"/>
@@ -233,6 +373,69 @@
             <index-column name="companyid"/>
         </index>
     </table>
+    <table name="course_group">
+        <column name="coursegroupid" primaryKey="true" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="courseid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="idnumber" primaryKey="false" required="true" scale="0" size="100" type="12,VARCHAR"/>
+        <column name="name" primaryKey="false" required="true" scale="0" size="254" type="12,VARCHAR"/>
+        <column name="description" primaryKey="false" required="false" scale="0" size="2147483647" type="-1,LONGTEXT"/>
+        <column name="descriptionformat" primaryKey="false" required="true" scale="0" size="3" type="-6,TINYINT"/>
+        <column name="enrolmentkey" primaryKey="false" required="false" scale="0" size="50" type="12,VARCHAR"/>
+        <column name="picture" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="hidepicture" primaryKey="false" required="true" scale="0" size="0" type="-7,BIT"/>
+        <column name="createdtime" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="modifiedtime" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <foreign-key foreignTable="course" name="fk_group_course" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="false"/>
+            <reference foreign="courseid" local="courseid"/>
+        </foreign-key>
+        <foreign-key foreignTable="course_group_member" name="fk_groupmember_group" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="true"/>
+            <reference foreign="coursegroupid" local="coursegroupid"/>
+        </foreign-key>
+        <unique name="PRIMARY">
+            <unique-column name="coursegroupid"/>
+        </unique>
+        <index name="grou_idn_ix">
+            <index-column name="idnumber"/>
+        </index>
+        <index name="grou_cou_ix">
+            <index-column name="courseid"/>
+        </index>
+    </table>
+    <table name="course_group_member">
+        <column name="cougrpmemid" primaryKey="true" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="coursegroupid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="userid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="companyid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="timeadded" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="component" primaryKey="false" required="true" scale="0" size="100" type="12,VARCHAR"/>
+        <column name="itemid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <foreign-key foreignTable="course_group" name="fk_groupmember_group" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="false"/>
+            <reference foreign="coursegroupid" local="coursegroupid"/>
+        </foreign-key>
+        <foreign-key foreignTable="user" name="fk_groupmember_user" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="false"/>
+            <reference foreign="userid" local="userid"/>
+        </foreign-key>
+        <foreign-key foreignTable="company" name="fk_grp_cour_company" onDelete="none" onUpdate="none">
+            <option key="exported" value="false"/>
+            <reference foreign="companyid" local="companyid"/>
+        </foreign-key>
+        <unique name="PRIMARY">
+            <unique-column name="cougrpmemid"/>
+        </unique>
+        <index name="groumemb_gro_ix">
+            <index-column name="coursegroupid"/>
+        </index>
+        <index name="groumemb_use_ix">
+            <index-column name="userid"/>
+        </index>
+        <index name="fk_grp_cour_company">
+            <index-column name="companyid"/>
+        </index>
+    </table>
     <table name="course_modules">
         <column name="coursemoduleid" primaryKey="true" required="true" scale="0" size="19" type="-5,BIGINT"/>
         <column name="courseid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
@@ -246,10 +449,6 @@
         <column name="status" primaryKey="false" required="true" scale="0" size="0" type="-7,BIT"/>
         <column name="completion" primaryKey="false" required="true" scale="0" size="0" type="-7,BIT"/>
         <column name="companyid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
-        <foreign-key foreignTable="company" name="fk_course_mod_company" onDelete="none" onUpdate="none">
-            <option key="exported" value="false"/>
-            <reference foreign="companyid" local="companyid"/>
-        </foreign-key>
         <foreign-key foreignTable="modules" name="fk_course_module" onDelete="cascade" onUpdate="cascade">
             <option key="exported" value="false"/>
             <reference foreign="moduleid" local="moduleid"/>
@@ -257,6 +456,10 @@
         <foreign-key foreignTable="course" name="fk_course_module_course" onDelete="cascade" onUpdate="cascade">
             <option key="exported" value="false"/>
             <reference foreign="courseid" local="courseid"/>
+        </foreign-key>
+        <foreign-key foreignTable="company" name="fk_course_mod_company" onDelete="none" onUpdate="none">
+            <option key="exported" value="false"/>
+            <reference foreign="companyid" local="companyid"/>
         </foreign-key>
         <foreign-key foreignTable="course_modules_completion" name="fk_course_module_comp" onDelete="cascade" onUpdate="cascade">
             <option key="exported" value="true"/>
@@ -293,6 +496,10 @@
         <column name="viewed" primaryKey="false" required="false" scale="0" size="0" type="-7,BIT"/>
         <column name="modifiedtime" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
         <column name="companyid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <foreign-key foreignTable="course_modules" name="fk_course_module_comp" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="false"/>
+            <reference foreign="coursemoduleid" local="coursemoduleid"/>
+        </foreign-key>
         <foreign-key foreignTable="company" name="fk_cour_mod_comp_company" onDelete="none" onUpdate="none">
             <option key="exported" value="false"/>
             <reference foreign="companyid" local="companyid"/>
@@ -300,10 +507,6 @@
         <foreign-key foreignTable="user" name="fk_cour_mod_comp_user" onDelete="cascade" onUpdate="cascade">
             <option key="exported" value="false"/>
             <reference foreign="userid" local="userid"/>
-        </foreign-key>
-        <foreign-key foreignTable="course_modules" name="fk_course_module_comp" onDelete="cascade" onUpdate="cascade">
-            <option key="exported" value="false"/>
-            <reference foreign="coursemoduleid" local="coursemoduleid"/>
         </foreign-key>
         <unique name="PRIMARY">
             <unique-column name="courmodcompid"/>
@@ -329,13 +532,13 @@
         <column name="sequence" primaryKey="false" required="false" scale="0" size="2147483647" type="-1,LONGTEXT"/>
         <column name="status" primaryKey="false" required="true" scale="0" size="0" type="-7,BIT"/>
         <column name="companyid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
-        <foreign-key foreignTable="company" name="fk_cour_sec_company" onDelete="none" onUpdate="none">
-            <option key="exported" value="false"/>
-            <reference foreign="companyid" local="companyid"/>
-        </foreign-key>
         <foreign-key foreignTable="course" name="fk_course_section" onDelete="cascade" onUpdate="cascade">
             <option key="exported" value="false"/>
             <reference foreign="courseid" local="courseid"/>
+        </foreign-key>
+        <foreign-key foreignTable="company" name="fk_cour_sec_company" onDelete="none" onUpdate="none">
+            <option key="exported" value="false"/>
+            <reference foreign="companyid" local="companyid"/>
         </foreign-key>
         <unique name="PRIMARY">
             <unique-column name="coursesectionid"/>
@@ -346,6 +549,51 @@
         </unique>
         <index name="fk_cour_sec_company">
             <index-column name="companyid"/>
+        </index>
+    </table>
+    <table name="enrolment">
+        <column name="enrolmentid" primaryKey="true" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="enrol" primaryKey="false" required="true" scale="0" size="20" type="12,VARCHAR"/>
+        <column name="status" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="courseid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="sortorder" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="name" primaryKey="false" required="false" scale="0" size="255" type="12,VARCHAR"/>
+        <column name="enrolperiod" primaryKey="false" required="false" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="enrolstartdate" primaryKey="false" required="false" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="enrolenddate" primaryKey="false" required="false" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="expirynotify" primaryKey="false" required="false" scale="0" size="0" type="-7,BIT"/>
+        <column name="expirythreshold" primaryKey="false" required="false" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="notifyall" primaryKey="false" required="false" scale="0" size="0" type="-7,BIT"/>
+        <column name="password" primaryKey="false" required="false" scale="0" size="50" type="12,VARCHAR"/>
+        <column name="cost" primaryKey="false" required="false" scale="0" size="20" type="12,VARCHAR"/>
+        <column name="currency" primaryKey="false" required="false" scale="0" size="3" type="12,VARCHAR"/>
+        <column name="roleid" primaryKey="false" required="false" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="customint1" primaryKey="false" required="false" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="customint2" primaryKey="false" required="false" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="customchar1" primaryKey="false" required="false" scale="0" size="255" type="12,VARCHAR"/>
+        <column name="customchar2" primaryKey="false" required="false" scale="0" size="255" type="12,VARCHAR"/>
+        <column name="customdec1" primaryKey="false" required="false" scale="7" size="12" type="3,DECIMAL"/>
+        <column name="customdec2" primaryKey="false" required="false" scale="7" size="12" type="3,DECIMAL"/>
+        <column name="customtext1" primaryKey="false" required="false" scale="0" size="2147483647" type="-1,LONGTEXT"/>
+        <column name="customtext2" primaryKey="false" required="false" scale="0" size="2147483647" type="-1,LONGTEXT"/>
+        <column name="createdtime" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="modifiedtime" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <foreign-key foreignTable="course" name="fk_enrol_course" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="false"/>
+            <reference foreign="courseid" local="courseid"/>
+        </foreign-key>
+        <foreign-key foreignTable="user_enrolment" name="fk_userenrollment_enrol" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="true"/>
+            <reference foreign="enrolmentid" local="enrolmentid"/>
+        </foreign-key>
+        <unique name="PRIMARY">
+            <unique-column name="enrolmentid"/>
+        </unique>
+        <index name="enro_enr_ix">
+            <index-column name="enrol"/>
+        </index>
+        <index name="courformopti_cou_ix">
+            <index-column name="courseid"/>
         </index>
     </table>
     <table name="modules">
@@ -448,11 +696,27 @@
             <option key="exported" value="false"/>
             <reference foreign="roletype" local="roletype"/>
         </foreign-key>
+        <foreign-key foreignTable="assignment_grade" name="fk_assigngrade_user" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="true"/>
+            <reference foreign="userid" local="userid"/>
+        </foreign-key>
+        <foreign-key foreignTable="assignment_user_mapping" name="fk_assignmapping_user" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="true"/>
+            <reference foreign="userid" local="userid"/>
+        </foreign-key>
         <foreign-key foreignTable="course_completions" name="fk_course_comp_user" onDelete="cascade" onUpdate="cascade">
             <option key="exported" value="true"/>
             <reference foreign="userid" local="userid"/>
         </foreign-key>
+        <foreign-key foreignTable="course_group_member" name="fk_groupmember_user" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="true"/>
+            <reference foreign="userid" local="userid"/>
+        </foreign-key>
         <foreign-key foreignTable="course_modules_completion" name="fk_cour_mod_comp_user" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="true"/>
+            <reference foreign="userid" local="userid"/>
+        </foreign-key>
+        <foreign-key foreignTable="user_enrolment" name="fk_userenrollment_user" onDelete="cascade" onUpdate="cascade">
             <option key="exported" value="true"/>
             <reference foreign="userid" local="userid"/>
         </foreign-key>
@@ -471,6 +735,49 @@
         </index>
         <index name="fk_user_roletype">
             <index-column name="roletype"/>
+        </index>
+    </table>
+    <table name="user_enrolment">
+        <column name="userenrolmentid" primaryKey="true" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="status" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="enrolmentid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="userid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="companyid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="timestart" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="timeend" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="modifierid" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="createdtime" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <column name="modifiedtime" primaryKey="false" required="true" scale="0" size="19" type="-5,BIGINT"/>
+        <foreign-key foreignTable="enrolment" name="fk_userenrollment_enrol" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="false"/>
+            <reference foreign="enrolmentid" local="enrolmentid"/>
+        </foreign-key>
+        <foreign-key foreignTable="user" name="fk_userenrollment_user" onDelete="cascade" onUpdate="cascade">
+            <option key="exported" value="false"/>
+            <reference foreign="userid" local="userid"/>
+        </foreign-key>
+        <foreign-key foreignTable="company" name="fk_usr_enrol_comp" onDelete="none" onUpdate="none">
+            <option key="exported" value="false"/>
+            <reference foreign="companyid" local="companyid"/>
+        </foreign-key>
+        <unique name="PRIMARY">
+            <unique-column name="userenrolmentid"/>
+        </unique>
+        <unique name="userenro_enruse_uix">
+            <unique-column name="enrolmentid"/>
+            <unique-column name="userid"/>
+        </unique>
+        <index name="userenro_enr_ix">
+            <index-column name="enrolmentid"/>
+        </index>
+        <index name="userenro_use_ix">
+            <index-column name="userid"/>
+        </index>
+        <index name="usr_enrol_comp_ix">
+            <index-column name="companyid"/>
+        </index>
+        <index name="userenro_mod_ix">
+            <index-column name="modifierid"/>
         </index>
     </table>
     <table name="userpermission">

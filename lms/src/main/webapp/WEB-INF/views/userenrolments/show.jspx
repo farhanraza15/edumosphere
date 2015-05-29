@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_edumosphere_lms_domain_UserEnrolment" object="${userenrolment}" path="/userenrolments" z="70YUvGDHY+pAoPzW2DS/UjbspIM=">
+        <field:display field="enrolmentid" id="s_com_edumosphere_lms_domain_UserEnrolment_enrolmentid" object="${userenrolment}" z="cVcgGvqCMPqcX1LLfcHraGXG7rs="/>
+        <field:display field="userid" id="s_com_edumosphere_lms_domain_UserEnrolment_userid" object="${userenrolment}" z="UThI2j7JyNNFW8thVQNg4V3xGy8="/>
+        <field:display field="companyid" id="s_com_edumosphere_lms_domain_UserEnrolment_companyid" object="${userenrolment}" z="8WNWNEO0gDsNNANdbzHeqjvbDQk="/>
+        <field:display field="status" id="s_com_edumosphere_lms_domain_UserEnrolment_status" object="${userenrolment}" z="BdXrR9KBc9PJ7Rlc3S4MLw8yFH8="/>
+        <field:display field="timestart" id="s_com_edumosphere_lms_domain_UserEnrolment_timestart" object="${userenrolment}" z="CNIWiTy67/ANu4hhKivLbDorYsI="/>
+        <field:display field="timeend" id="s_com_edumosphere_lms_domain_UserEnrolment_timeend" object="${userenrolment}" z="ROiZio70wKZl3q2I2FBkhXocsK8="/>
+        <field:display field="modifierid" id="s_com_edumosphere_lms_domain_UserEnrolment_modifierid" object="${userenrolment}" z="NPy7pcTJO7oNZOoBLPhKUaP41G4="/>
+        <field:display field="createdtime" id="s_com_edumosphere_lms_domain_UserEnrolment_createdtime" object="${userenrolment}" z="UJ7mI+UyrZMyXHFbvAmYsqhmK68="/>
+        <field:display field="modifiedtime" id="s_com_edumosphere_lms_domain_UserEnrolment_modifiedtime" object="${userenrolment}" z="L9Tr/QFyoLoFenf7SrnurHOhmII="/>
+    </page:show>
+</div>

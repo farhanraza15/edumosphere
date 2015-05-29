@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_edumosphere_lms_domain_Assignment" items="${assignments}" z="awkUPEFU0SSAAEFcPj338qS7cRE=">
+        <table:table data="${assignments}" id="l_com_edumosphere_lms_domain_Assignment" path="/assignments" typeIdFieldName="assignmentid" z="hsR5IZ5HzcXYl1K1GrVWy1FIfuA=">
+            <table:column id="c_com_edumosphere_lms_domain_Assignment_courseid" property="courseid" z="06efmlCeucCvrwL0GmesK9pzZEo="/>
+            <table:column id="c_com_edumosphere_lms_domain_Assignment_name" property="name" z="qT19sx0EJiiHupwMrvMv5/fiEeg="/>
+            <table:column id="c_com_edumosphere_lms_domain_Assignment_intro" property="intro" z="nyt2ax10w7zltwyNntxGDGMbNj8="/>
+            <table:column id="c_com_edumosphere_lms_domain_Assignment_introformat" property="introformat" z="dDVnHsXpDGAfHr8VYWZBmEXrlGc="/>
+        </table:table>
+    </page:list>
+</div>

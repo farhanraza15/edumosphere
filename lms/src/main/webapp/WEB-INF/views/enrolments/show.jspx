@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_edumosphere_lms_domain_Enrolment" object="${enrolment}" path="/enrolments" z="5bsL9m9lT4Fv0DNS1cy6UHj7yfc=">
+        <field:display field="courseid" id="s_com_edumosphere_lms_domain_Enrolment_courseid" object="${enrolment}" z="qppEf/3lDUSqhPShhoDOtZF9UD4="/>
+        <field:display field="enrol" id="s_com_edumosphere_lms_domain_Enrolment_enrol" object="${enrolment}" z="yh6APzUMnKQnWNkSr3Utis5WTnA="/>
+        <field:display field="status" id="s_com_edumosphere_lms_domain_Enrolment_status" object="${enrolment}" z="O+dxRai79Ct5mU/Z+OTaLKneCKU="/>
+        <field:display field="sortorder" id="s_com_edumosphere_lms_domain_Enrolment_sortorder" object="${enrolment}" z="WY3mRsuH1SKM7GSwt/Au8TPzXS4="/>
+        <field:display field="name" id="s_com_edumosphere_lms_domain_Enrolment_name" object="${enrolment}" z="LGQLEljWX9deMFTkHemr+I5TYmM="/>
+        <field:display field="enrolperiod" id="s_com_edumosphere_lms_domain_Enrolment_enrolperiod" object="${enrolment}" z="jUz6jUTSUnqnG6E/jjiY6qiTT5o="/>
+        <field:display field="enrolstartdate" id="s_com_edumosphere_lms_domain_Enrolment_enrolstartdate" object="${enrolment}" z="6AeztqLgFAB+/lCupu0rzgIiXFU="/>
+        <field:display field="enrolenddate" id="s_com_edumosphere_lms_domain_Enrolment_enrolenddate" object="${enrolment}" z="kXUkVGmO1AbdxtugVwIH2QrETVg="/>
+        <field:display field="expirynotify" id="s_com_edumosphere_lms_domain_Enrolment_expirynotify" object="${enrolment}" z="de2CsQGU5NVnR7MrXP4+Wzv+wTU="/>
+        <field:display field="expirythreshold" id="s_com_edumosphere_lms_domain_Enrolment_expirythreshold" object="${enrolment}" z="breZBRCZtNm4N8eGUyA6wgQ9Vjk="/>
+        <field:display field="notifyall" id="s_com_edumosphere_lms_domain_Enrolment_notifyall" object="${enrolment}" z="DYRrJW6Ydv17DjEx+oi11Ssk7lY="/>
+        <field:display field="password" id="s_com_edumosphere_lms_domain_Enrolment_password" object="${enrolment}" z="sQZVtw84gL0hvIZTc4mLacrabbM="/>
+        <field:display field="cost" id="s_com_edumosphere_lms_domain_Enrolment_cost" object="${enrolment}" z="l8XwThEOQN7GbT1WR6mHsGDcMPI="/>
+        <field:display field="currency" id="s_com_edumosphere_lms_domain_Enrolment_currency" object="${enrolment}" z="3GGxcRVSsZ/WAOydWjrA2lNvO+0="/>
+        <field:display field="roleid" id="s_com_edumosphere_lms_domain_Enrolment_roleid" object="${enrolment}" z="4PG3dbnK2Bl1GKuuybFF4Gs7Guc="/>
+        <field:display field="customint1" id="s_com_edumosphere_lms_domain_Enrolment_customint1" object="${enrolment}" z="iW5WxDknj+LSGBPJ4YdlEz1I08k="/>
+        <field:display field="customint2" id="s_com_edumosphere_lms_domain_Enrolment_customint2" object="${enrolment}" z="pCToJV/MBGS4EQbfrPRTgklHCF8="/>
+        <field:display field="customchar1" id="s_com_edumosphere_lms_domain_Enrolment_customchar1" object="${enrolment}" z="oI8AfGzOtlOx3dKuY3OOgoIq+HI="/>
+        <field:display field="customchar2" id="s_com_edumosphere_lms_domain_Enrolment_customchar2" object="${enrolment}" z="hDBqHdOyH3GhotXLP9Edh+5+s9w="/>
+        <field:display field="customdec1" id="s_com_edumosphere_lms_domain_Enrolment_customdec1" object="${enrolment}" z="UeVFW68InnJ0sw0Bw62pBcjhvok="/>
+        <field:display field="customdec2" id="s_com_edumosphere_lms_domain_Enrolment_customdec2" object="${enrolment}" z="8HAMHI21XurMelUbwo+2Ixmm/UI="/>
+        <field:display field="customtext1" id="s_com_edumosphere_lms_domain_Enrolment_customtext1" object="${enrolment}" z="woFoUflKsLPKYerVs78FKmIdwxA="/>
+        <field:display field="customtext2" id="s_com_edumosphere_lms_domain_Enrolment_customtext2" object="${enrolment}" z="kp20LFitbqhFSRc/bMOQSESguYM="/>
+        <field:display field="createdtime" id="s_com_edumosphere_lms_domain_Enrolment_createdtime" object="${enrolment}" z="PaEbcmB+wUzu/xTMSbbWbo3l5Bs="/>
+        <field:display field="modifiedtime" id="s_com_edumosphere_lms_domain_Enrolment_modifiedtime" object="${enrolment}" z="Bc26v4jxJyOcIm2mrH6dAf53tes="/>
+    </page:show>
+</div>

@@ -55,5 +55,33 @@
             <menu:item id="i_coursemodules_new" messageCode="global_menu_new" url="/coursemoduleses?form" z="+nLXRq8ROfsCksZ7oNV9ohoO92Y="/>
             <menu:item id="i_coursemodules_list" messageCode="global_menu_list" url="/coursemoduleses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="QTY9pciS0BLlb4q3r3/VHxW1JvA="/>
         </menu:category>
+        <menu:category id="c_assignment" z="w3kLTINKS7X8zmTPN1e8IVhxR48=">
+            <menu:item id="i_assignment_new" messageCode="global_menu_new" url="/assignments?form" z="F8F6z0PKMux9ewLAnLZk6bOmQUI="/>
+            <menu:item id="i_assignment_list" messageCode="global_menu_list" url="/assignments?page=1&amp;size=${empty param.size ? 10 : param.size}" z="FqGKDJ1OJ5E3SMMCEDYTMncZUKM="/>
+        </menu:category>
+        <menu:category id="c_coursegroup" z="YyW+YC9HedwXkbzOI51TQTDncwQ=">
+            <menu:item id="i_coursegroup_new" messageCode="global_menu_new" url="/coursegroups?form" z="42NfGuN+5P/XpLLZsPnSP/M7CX0="/>
+            <menu:item id="i_coursegroup_list" messageCode="global_menu_list" url="/coursegroups?page=1&amp;size=${empty param.size ? 10 : param.size}" z="sC0K0mEzUV4zk3U/1tvR6SOVhxc="/>
+        </menu:category>
+        <menu:category id="c_enrolment" z="lW7dnI8EsMXDnr2YclsZ3kUIVmU=">
+            <menu:item id="i_enrolment_new" messageCode="global_menu_new" url="/enrolments?form" z="b2ouZmUBYaqCZNN8NIq3jyuFg68="/>
+            <menu:item id="i_enrolment_list" messageCode="global_menu_list" url="/enrolments?page=1&amp;size=${empty param.size ? 10 : param.size}" z="pdrVAsRRj4YiD5U2wWC4kv3+sZk="/>
+        </menu:category>
+        <menu:category id="c_userenrolment" z="LOeopoKm/bwg25/8V1ldktusolU=">
+            <menu:item id="i_userenrolment_new" messageCode="global_menu_new" url="/userenrolments?form" z="dSp2Fwp9bdM2DVAPbmrAiFW36cY="/>
+            <menu:item id="i_userenrolment_list" messageCode="global_menu_list" url="/userenrolments?page=1&amp;size=${empty param.size ? 10 : param.size}" z="uqq7/JSWtPj4XiH6Jq0BVAAavmw="/>
+        </menu:category>
+        <menu:category id="c_assignmentusermapping" z="niarXdJ6OZ7hALicUkTomMcntYc=">
+            <menu:item id="i_assignmentusermapping_new" messageCode="global_menu_new" url="/assignmentusermappings?form" z="2ki+FTWle8sbPlTBKdXMC0e53cA="/>
+            <menu:item id="i_assignmentusermapping_list" messageCode="global_menu_list" url="/assignmentusermappings?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Auo+0XivD2iSB8sQ1i9+H6vu6aU="/>
+        </menu:category>
+        <menu:category id="c_coursegroupmember" z="cLr4xxidltjgsqYgKnS4cIbLm98=">
+            <menu:item id="i_coursegroupmember_new" messageCode="global_menu_new" url="/coursegroupmembers?form" z="Po5y6fezimFCXUGxkxNF28gh75Q="/>
+            <menu:item id="i_coursegroupmember_list" messageCode="global_menu_list" url="/coursegroupmembers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="QNft0T3Q1wcpvDkzxyJOrK68Jx8="/>
+        </menu:category>
+        <menu:category id="c_assignmentgrade" z="OwV3KSaS9mDs8JvkmTPUn6o5nho=">
+            <menu:item id="i_assignmentgrade_new" messageCode="global_menu_new" url="/assignmentgrades?form" z="tmqte0QvJurZ+FALjTMyz/2OIuU="/>
+            <menu:item id="i_assignmentgrade_list" messageCode="global_menu_list" url="/assignmentgrades?page=1&amp;size=${empty param.size ? 10 : param.size}" z="MPnRI78qWtorMqhgD13aeYUT6mY="/>
+        </menu:category>
     </menu:menu>
 </div>

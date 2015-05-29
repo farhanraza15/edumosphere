@@ -27,7 +27,7 @@ privileged aspect CourseCategories_Roo_DbManaged {
     private Company CourseCategories.companyid;
     
     @ManyToOne
-    @JoinColumn(name = "categoryparentid", referencedColumnName = "categoryid", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "categoryparentid", referencedColumnName = "categoryid", nullable = false, insertable = true, updatable = true)
     private CourseCategories CourseCategories.categoryparentid;
     
     @Column(name = "title", length = 255)

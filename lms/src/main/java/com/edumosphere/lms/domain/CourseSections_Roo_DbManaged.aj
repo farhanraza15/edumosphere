@@ -14,12 +14,12 @@ import javax.validation.constraints.NotNull;
 privileged aspect CourseSections_Roo_DbManaged {
     
     @ManyToOne
-    @JoinColumn(name = "companyid", referencedColumnName = "companyid", nullable = false)
-    private Company CourseSections.companyid;
-    
-    @ManyToOne
     @JoinColumn(name = "courseid", referencedColumnName = "courseid", nullable = false)
     private Course CourseSections.courseid;
+    
+    @ManyToOne
+    @JoinColumn(name = "companyid", referencedColumnName = "companyid", nullable = false)
+    private Company CourseSections.companyid;
     
     @Column(name = "section", unique = true)
     @NotNull
@@ -42,20 +42,20 @@ privileged aspect CourseSections_Roo_DbManaged {
     @NotNull
     private boolean CourseSections.status;
     
-    public Company CourseSections.getCompanyid() {
-        return companyid;
-    }
-    
-    public void CourseSections.setCompanyid(Company companyid) {
-        this.companyid = companyid;
-    }
-    
     public Course CourseSections.getCourseid() {
         return courseid;
     }
     
     public void CourseSections.setCourseid(Course courseid) {
         this.courseid = courseid;
+    }
+    
+    public Company CourseSections.getCompanyid() {
+        return companyid;
+    }
+    
+    public void CourseSections.setCompanyid(Company companyid) {
+        this.companyid = companyid;
     }
     
     public Long CourseSections.getSection() {

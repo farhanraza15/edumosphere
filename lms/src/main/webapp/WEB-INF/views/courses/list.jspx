@@ -3,9 +3,6 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_com_edumosphere_lms_domain_Course" items="${courses}" z="4gX2hRlicmy2VX5he2SIs61NQC4=">
-        <table:table data="${courses}" id="l_com_edumosphere_lms_domain_Course" path="/courses" typeIdFieldName="courseid" z="0B7lGcy7/6JvkZpaFkiiXIUhu3o=">
-            <table:column id="c_com_edumosphere_lms_domain_Course_categoryid" property="categoryid" z="7b9PpKFKbTM/X0O9PObkmd5nG9I="/>
-            <table:column id="c_com_edumosphere_lms_domain_Course_companyid" property="companyid" z="0ErisdeHFol/AIxL5wsWUyhFh3M="/>
-        </table:table>
+        <table:table data="${courses}" id="l_com_edumosphere_lms_domain_Course" path="/courses" typeIdFieldName="courseid" z="0B7lGcy7/6JvkZpaFkiiXIUhu3o="/>
     </page:list>
 </div>

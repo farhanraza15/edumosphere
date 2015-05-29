@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_edumosphere_lms_domain_CourseGroupMember" object="${coursegroupmember}" path="/coursegroupmembers" z="8z8HGF32Kg2sf7gN40ljE14E+t0=">
+        <field:display field="coursegroupid" id="s_com_edumosphere_lms_domain_CourseGroupMember_coursegroupid" object="${coursegroupmember}" z="Zs9xzNjfEPBfUd4hVjyJCQcKLgA="/>
+        <field:display field="userid" id="s_com_edumosphere_lms_domain_CourseGroupMember_userid" object="${coursegroupmember}" z="KWVKXs8kpaek+Q3NG6MiEFLSwcw="/>
+        <field:display field="companyid" id="s_com_edumosphere_lms_domain_CourseGroupMember_companyid" object="${coursegroupmember}" z="bYRGwtWiQl3tkd+KX3FtsUbmT8g="/>
+        <field:display field="timeadded" id="s_com_edumosphere_lms_domain_CourseGroupMember_timeadded" object="${coursegroupmember}" z="PtHHUhmq7PNw3tqUphXFTHqxe2Q="/>
+        <field:display field="component" id="s_com_edumosphere_lms_domain_CourseGroupMember_component" object="${coursegroupmember}" z="SYbuA5zNfrwl3wb3ZpdBCgZ+i+U="/>
+        <field:display field="itemid" id="s_com_edumosphere_lms_domain_CourseGroupMember_itemid" object="${coursegroupmember}" z="Q0kV/AkQaqpn41X47kvslzsU4QE="/>
+    </page:show>
+</div>

@@ -3,13 +3,16 @@
 
 package com.edumosphere.lms.web;
 
+import com.edumosphere.lms.domain.Assignment;
 import com.edumosphere.lms.domain.Company;
 import com.edumosphere.lms.domain.Course;
 import com.edumosphere.lms.domain.CourseCategories;
 import com.edumosphere.lms.domain.CourseCompletions;
 import com.edumosphere.lms.domain.CourseFormatOptions;
+import com.edumosphere.lms.domain.CourseGroup;
 import com.edumosphere.lms.domain.CourseModules;
 import com.edumosphere.lms.domain.CourseSections;
+import com.edumosphere.lms.domain.Enrolment;
 import com.edumosphere.lms.web.CourseController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -50,15 +53,15 @@ privileged aspect CourseController_Roo_Controller {
     }
     
     @RequestMapping(produces = "text/html")
-    public String CourseController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public String CourseController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-            uiModel.addAttribute("courses", Course.findCourseEntries(firstResult, sizeNo));
+            uiModel.addAttribute("courses", Course.findCourseEntries(firstResult, sizeNo, sortFieldName, sortOrder));
             float nrOfPages = (float) Course.countCourses() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("courses", Course.findAllCourses());
+            uiModel.addAttribute("courses", Course.findAllCourses(sortFieldName, sortOrder));
         }
         return "courses/list";
     }
@@ -92,12 +95,15 @@ privileged aspect CourseController_Roo_Controller {
     
     void CourseController.populateEditForm(Model uiModel, Course course) {
         uiModel.addAttribute("course", course);
+        uiModel.addAttribute("assignments", Assignment.findAllAssignments());
         uiModel.addAttribute("companys", Company.findAllCompanys());
         uiModel.addAttribute("coursecategorieses", CourseCategories.findAllCourseCategorieses());
         uiModel.addAttribute("coursecompletionses", CourseCompletions.findAllCourseCompletionses());
         uiModel.addAttribute("courseformatoptionses", CourseFormatOptions.findAllCourseFormatOptionses());
+        uiModel.addAttribute("coursegroups", CourseGroup.findAllCourseGroups());
         uiModel.addAttribute("coursemoduleses", CourseModules.findAllCourseModuleses());
         uiModel.addAttribute("coursesectionses", CourseSections.findAllCourseSectionses());
+        uiModel.addAttribute("enrolments", Enrolment.findAllEnrolments());
     }
     
     String CourseController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

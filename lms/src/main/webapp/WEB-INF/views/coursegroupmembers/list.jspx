@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_edumosphere_lms_domain_CourseGroupMember" items="${coursegroupmembers}" z="4+hDbWB/gPBzshy3vwii65zoclc=">
+        <table:table data="${coursegroupmembers}" id="l_com_edumosphere_lms_domain_CourseGroupMember" path="/coursegroupmembers" typeIdFieldName="cougrpmemid" z="I1y90ujRE3tqPK7WejbryTU19dk=">
+            <table:column id="c_com_edumosphere_lms_domain_CourseGroupMember_coursegroupid" property="coursegroupid" z="Ht/lhTsfQg/YmetXjeVoze4DQWg="/>
+            <table:column id="c_com_edumosphere_lms_domain_CourseGroupMember_userid" property="userid" z="zYS4M9igiyaGzwJ0NI7AdimsIAA="/>
+            <table:column id="c_com_edumosphere_lms_domain_CourseGroupMember_companyid" property="companyid" z="y4POsIFdoyxGY28uVw+ig2c4jzw="/>
+            <table:column id="c_com_edumosphere_lms_domain_CourseGroupMember_timeadded" property="timeadded" z="vTyipLX6X4hbwvJ4bVmB8o6BQHo="/>
+            <table:column id="c_com_edumosphere_lms_domain_CourseGroupMember_component" property="component" z="bDeOsqodV242bmyL0wqahr5ZpUI="/>
+            <table:column id="c_com_edumosphere_lms_domain_CourseGroupMember_itemid" property="itemid" z="A8NfBcbzfbFJ6uy3C907oPry3t0="/>
+        </table:table>
+    </page:list>
+</div>

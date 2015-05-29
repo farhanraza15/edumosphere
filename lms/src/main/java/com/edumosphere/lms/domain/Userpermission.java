@@ -1,5 +1,5 @@
 package com.edumosphere.lms.domain;
-
+import java.io.Serializable;
 import org.springframework.roo.addon.dbre.RooDbManaged;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
@@ -9,5 +9,5 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord(versionField = "", table = "userpermission")
 @RooDbManaged(automaticallyDelete = true)
 @RooToString(excludeFields = { "companyid", "permissiontype", "userid" })
-public class Userpermission {
+public class Userpermission implements Serializable {
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_edumosphere_lms_domain_Assignment" modelAttribute="assignment" path="/assignments" render="${empty dependencies}" z="mvZdoDK0jF5o0n68AW4MOyQWQR4=">
+        <field:simple field="assignmentGrades" id="c_com_edumosphere_lms_domain_Assignment_assignmentGrades" messageCode="entity_reference_not_managed" messageCodeAttribute="Assignment Grade" z="2JoA4Toe0JEcxfPvddlID1I4w8A="/>
+        <field:simple field="assignmentUserMappings" id="c_com_edumosphere_lms_domain_Assignment_assignmentUserMappings" messageCode="entity_reference_not_managed" messageCodeAttribute="Assignment User Mapping" z="rn6HMI/QJxy+0X4R9EYvNISWuIc="/>
+        <field:select field="courseid" id="c_com_edumosphere_lms_domain_Assignment_courseid" itemValue="courseid" items="${courses}" path="/courses" z="8O2qk4vckAbwaVxtIOXFWIZwReY="/>
+        <field:input field="name" id="c_com_edumosphere_lms_domain_Assignment_name" required="true" z="Y33HEggMK3WRnT6LFpFw1EItTlM="/>
+        <field:input field="intro" id="c_com_edumosphere_lms_domain_Assignment_intro" required="true" z="9mysvDej/D3w5q0H51JescsBIIo="/>
+        <field:input field="introformat" id="c_com_edumosphere_lms_domain_Assignment_introformat" required="true" validationMessageCode="field_invalid_integer" z="rQQMmZ6v28OSZGyEZqDkAd4K7f0="/>
+        <field:input field="assignmenttype" id="c_com_edumosphere_lms_domain_Assignment_assignmenttype" required="true" z="EVNSXjjmiTTz4x13maXVUZ3da2g="/>
+        <field:input field="resubmit" id="c_com_edumosphere_lms_domain_Assignment_resubmit" required="true" validationMessageCode="field_invalid_integer" z="HqKceQe+ZToVc/E0PtuE4i8ugsA="/>
+        <field:input field="preventlate" id="c_com_edumosphere_lms_domain_Assignment_preventlate" required="true" validationMessageCode="field_invalid_integer" z="vRCRITfdb2jtDV3E1Slkwhy/x6A="/>
+        <field:input field="emailteachers" id="c_com_edumosphere_lms_domain_Assignment_emailteachers" required="true" validationMessageCode="field_invalid_integer" z="Ajmt5bTV59RLdUoX5oqEBr3raSU="/>
+        <field:input field="var1" id="c_com_edumosphere_lms_domain_Assignment_var1" validationMessageCode="field_invalid_integer" z="ganRiSMcxetREF/QxuxW8Owhjp8="/>
+        <field:input field="var2" id="c_com_edumosphere_lms_domain_Assignment_var2" validationMessageCode="field_invalid_integer" z="D00UXF1I8vULEIdfDOTmxWj2LcY="/>
+        <field:input field="var3" id="c_com_edumosphere_lms_domain_Assignment_var3" validationMessageCode="field_invalid_integer" z="7ulbOtR1VoeB4ftf3Bx2Jyvt9S8="/>
+        <field:input field="var4" id="c_com_edumosphere_lms_domain_Assignment_var4" validationMessageCode="field_invalid_integer" z="+qx4JNy9blYEsaRaGOUfFo07GqQ="/>
+        <field:input field="var5" id="c_com_edumosphere_lms_domain_Assignment_var5" validationMessageCode="field_invalid_integer" z="WNBsqupS2CKtAK0lIteBdUZ3Mmk="/>
+        <field:input field="maxbytes" id="c_com_edumosphere_lms_domain_Assignment_maxbytes" required="true" validationMessageCode="field_invalid_integer" z="ehOBtCFOjJPKEObl6JrWD/S8faQ="/>
+        <field:input field="timedue" id="c_com_edumosphere_lms_domain_Assignment_timedue" required="true" validationMessageCode="field_invalid_integer" z="lrK8VTZ/f++XBS3M07Gkv1buEVk="/>
+        <field:input field="timeavailable" id="c_com_edumosphere_lms_domain_Assignment_timeavailable" required="true" validationMessageCode="field_invalid_integer" z="umbIX9D7OZW2lWhmPh2FHcyT8S4="/>
+        <field:input field="grade" id="c_com_edumosphere_lms_domain_Assignment_grade" required="true" validationMessageCode="field_invalid_integer" z="9WQ+4UGwVuYdwDr/M4WoggEFKT4="/>
+        <field:input field="timemodified" id="c_com_edumosphere_lms_domain_Assignment_timemodified" required="true" validationMessageCode="field_invalid_integer" z="Yfw9NgLjsfg6y458uGYOIs7tynk="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_edumosphere_lms_domain_Assignment" render="${not empty dependencies}" z="MkRI9EL8fS5jbC52BTxVZEx8Ye8="/>
+</div>

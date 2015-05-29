@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_edumosphere_lms_domain_CourseGroup" object="${coursegroup}" path="/coursegroups" z="6oaiSHhc/3csnkMGuJ/HUMJ36nc=">
+        <field:display field="courseid" id="s_com_edumosphere_lms_domain_CourseGroup_courseid" object="${coursegroup}" z="ybf2F6rMblozNzCZ6PE0v2kuTmQ="/>
+        <field:display field="idnumber" id="s_com_edumosphere_lms_domain_CourseGroup_idnumber" object="${coursegroup}" z="JBVBR7CDNkh0uMqIbjaaDSSuzSA="/>
+        <field:display field="name" id="s_com_edumosphere_lms_domain_CourseGroup_name" object="${coursegroup}" z="upgF9Q7LzHal3BcxnrozKmyY8f0="/>
+        <field:display field="description" id="s_com_edumosphere_lms_domain_CourseGroup_description" object="${coursegroup}" z="IcCWS4/hJLVuDxxfU4NYANm8EB8="/>
+        <field:display field="descriptionformat" id="s_com_edumosphere_lms_domain_CourseGroup_descriptionformat" object="${coursegroup}" z="WmKXiqU99YRYGnSt/z0+q/7JH50="/>
+        <field:display field="enrolmentkey" id="s_com_edumosphere_lms_domain_CourseGroup_enrolmentkey" object="${coursegroup}" z="bdX8X6u/gF3ATIoxBsyWVwypPiE="/>
+        <field:display field="picture" id="s_com_edumosphere_lms_domain_CourseGroup_picture" object="${coursegroup}" z="VqFYhBla3zuoKH23v5E9KiHFfAM="/>
+        <field:display field="hidepicture" id="s_com_edumosphere_lms_domain_CourseGroup_hidepicture" object="${coursegroup}" z="JmCE6CBuHPQAkLX6FEEaeMzJxVI="/>
+        <field:display field="createdtime" id="s_com_edumosphere_lms_domain_CourseGroup_createdtime" object="${coursegroup}" z="f/MF3fmDI18c+7tRwEhlY4Vq7Ls="/>
+        <field:display field="modifiedtime" id="s_com_edumosphere_lms_domain_CourseGroup_modifiedtime" object="${coursegroup}" z="ToSEf8vhcH4Dw3hdNtL7+5iGO0c="/>
+    </page:show>
+</div>

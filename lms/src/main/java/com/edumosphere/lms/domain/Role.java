@@ -1,5 +1,4 @@
 package com.edumosphere.lms.domain;
-
 import java.io.Serializable;
 import org.springframework.roo.addon.dbre.RooDbManaged;
 import org.springframework.roo.addon.javabean.RooJavaBean;

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_edumosphere_lms_domain_UserEnrolment" idField="userenrolmentid" modelAttribute="userEnrolment" path="/userenrolments" versionField="none" z="jELYd6yV9F1N9lTCRrRpEhhftAY=">
+        <field:select field="enrolmentid" id="c_com_edumosphere_lms_domain_UserEnrolment_enrolmentid" itemValue="enrolmentid" items="${enrolments}" path="/enrolments" z="UKjiQ1Iw/FIwxdOqtAmglUAftd4="/>
+        <field:select field="userid" id="c_com_edumosphere_lms_domain_UserEnrolment_userid" itemValue="userid" items="${users}" path="/users" z="IlH6nV7ahbZRoZRIsD/lsp+SO3E="/>
+        <field:select field="companyid" id="c_com_edumosphere_lms_domain_UserEnrolment_companyid" itemValue="companyid" items="${companys}" path="/companys" z="w/Ph90RnGUmiRl1v5hAglE+Xrmc="/>
+        <field:input field="status" id="c_com_edumosphere_lms_domain_UserEnrolment_status" required="true" validationMessageCode="field_invalid_integer" z="xgUnzcL3lDlov46iztfTOoeQv4Q="/>
+        <field:input field="timestart" id="c_com_edumosphere_lms_domain_UserEnrolment_timestart" required="true" validationMessageCode="field_invalid_integer" z="hjMZPH8c1GH8xcQkUYkMMF1Z1vw="/>
+        <field:input field="timeend" id="c_com_edumosphere_lms_domain_UserEnrolment_timeend" required="true" validationMessageCode="field_invalid_integer" z="HI+1ZsSFpquRbdk0resS5T6nLLU="/>
+        <field:input field="modifierid" id="c_com_edumosphere_lms_domain_UserEnrolment_modifierid" required="true" validationMessageCode="field_invalid_integer" z="SgkRZZidyK40ls3Xq+AzFa3J14Q="/>
+        <field:input field="createdtime" id="c_com_edumosphere_lms_domain_UserEnrolment_createdtime" required="true" validationMessageCode="field_invalid_integer" z="vnFVra35MSCLZcdj/sUu5YqU6JY="/>
+        <field:input field="modifiedtime" id="c_com_edumosphere_lms_domain_UserEnrolment_modifiedtime" required="true" validationMessageCode="field_invalid_integer" z="OyDh6GnS+HUhalQ+nZ1iki9nfZ4="/>
+    </form:update>
+</div>

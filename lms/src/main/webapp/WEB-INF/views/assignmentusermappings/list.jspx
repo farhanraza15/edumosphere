@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_edumosphere_lms_domain_AssignmentUserMapping" items="${assignmentusermappings}" z="jIHHdoOJbhCKXXCfAqlSQP8izHo=">
+        <table:table data="${assignmentusermappings}" id="l_com_edumosphere_lms_domain_AssignmentUserMapping" path="/assignmentusermappings" typeIdFieldName="asgusrmapid" z="BsD7rXgo4ht4lAVqFO4wjhFiOzA=">
+            <table:column id="c_com_edumosphere_lms_domain_AssignmentUserMapping_assignmentid" property="assignmentid" z="4x/uLpkbCs1lHtpukD42T8ZlgYM="/>
+            <table:column id="c_com_edumosphere_lms_domain_AssignmentUserMapping_userid" property="userid" z="FHa/8sKY4IZMtCAyhGglqWggiM4="/>
+            <table:column id="c_com_edumosphere_lms_domain_AssignmentUserMapping_companyid" property="companyid" z="U81fmaCY7dIFUy0rM8FEBSKLGps="/>
+        </table:table>
+    </page:list>
+</div>

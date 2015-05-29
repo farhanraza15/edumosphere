@@ -3,11 +3,15 @@
 
 package com.edumosphere.lms.web;
 
+import com.edumosphere.lms.domain.AssignmentGrade;
+import com.edumosphere.lms.domain.AssignmentUserMapping;
 import com.edumosphere.lms.domain.Company;
 import com.edumosphere.lms.domain.CourseCompletions;
+import com.edumosphere.lms.domain.CourseGroupMember;
 import com.edumosphere.lms.domain.CourseModulesCompletion;
 import com.edumosphere.lms.domain.Role;
 import com.edumosphere.lms.domain.User;
+import com.edumosphere.lms.domain.UserEnrolment;
 import com.edumosphere.lms.domain.Userpermission;
 import com.edumosphere.lms.web.UserController;
 import java.io.UnsupportedEncodingException;
@@ -49,15 +53,15 @@ privileged aspect UserController_Roo_Controller {
     }
     
     @RequestMapping(produces = "text/html")
-    public String UserController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public String UserController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-            uiModel.addAttribute("users", User.findUserEntries(firstResult, sizeNo));
+            uiModel.addAttribute("users", User.findUserEntries(firstResult, sizeNo, sortFieldName, sortOrder));
             float nrOfPages = (float) User.countUsers() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("users", User.findAllUsers());
+            uiModel.addAttribute("users", User.findAllUsers(sortFieldName, sortOrder));
         }
         return "users/list";
     }
@@ -91,10 +95,14 @@ privileged aspect UserController_Roo_Controller {
     
     void UserController.populateEditForm(Model uiModel, User user) {
         uiModel.addAttribute("user", user);
+        uiModel.addAttribute("assignmentgrades", AssignmentGrade.findAllAssignmentGrades());
+        uiModel.addAttribute("assignmentusermappings", AssignmentUserMapping.findAllAssignmentUserMappings());
         uiModel.addAttribute("companys", Company.findAllCompanys());
         uiModel.addAttribute("coursecompletionses", CourseCompletions.findAllCourseCompletionses());
+        uiModel.addAttribute("coursegroupmembers", CourseGroupMember.findAllCourseGroupMembers());
         uiModel.addAttribute("coursemodulescompletions", CourseModulesCompletion.findAllCourseModulesCompletions());
         uiModel.addAttribute("roles", Role.findAllRoles());
+        uiModel.addAttribute("userenrolments", UserEnrolment.findAllUserEnrolments());
         uiModel.addAttribute("userpermissions", Userpermission.findAllUserpermissions());
     }
     

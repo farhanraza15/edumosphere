@@ -3,18 +3,25 @@
 
 package com.edumosphere.lms.web;
 
+import com.edumosphere.lms.domain.Assignment;
+import com.edumosphere.lms.domain.AssignmentGrade;
+import com.edumosphere.lms.domain.AssignmentUserMapping;
 import com.edumosphere.lms.domain.Company;
 import com.edumosphere.lms.domain.Course;
 import com.edumosphere.lms.domain.CourseCategories;
 import com.edumosphere.lms.domain.CourseCompletions;
 import com.edumosphere.lms.domain.CourseFormatOptions;
+import com.edumosphere.lms.domain.CourseGroup;
+import com.edumosphere.lms.domain.CourseGroupMember;
 import com.edumosphere.lms.domain.CourseModules;
 import com.edumosphere.lms.domain.CourseModulesCompletion;
 import com.edumosphere.lms.domain.CourseSections;
+import com.edumosphere.lms.domain.Enrolment;
 import com.edumosphere.lms.domain.Modules;
 import com.edumosphere.lms.domain.Permission;
 import com.edumosphere.lms.domain.Role;
 import com.edumosphere.lms.domain.User;
+import com.edumosphere.lms.domain.UserEnrolment;
 import com.edumosphere.lms.domain.Userpermission;
 import com.edumosphere.lms.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -24,6 +31,78 @@ import org.springframework.format.FormatterRegistry;
 privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService {
     
     declare @type: ApplicationConversionServiceFactoryBean: @Configurable;
+    
+    public Converter<Assignment, String> ApplicationConversionServiceFactoryBean.getAssignmentToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.edumosphere.lms.domain.Assignment, java.lang.String>() {
+            public String convert(Assignment assignment) {
+                return new StringBuilder().append(assignment.getName()).append(' ').append(assignment.getIntro()).append(' ').append(assignment.getIntroformat()).append(' ').append(assignment.getAssignmenttype()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Assignment> ApplicationConversionServiceFactoryBean.getIdToAssignmentConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.edumosphere.lms.domain.Assignment>() {
+            public com.edumosphere.lms.domain.Assignment convert(java.lang.Long id) {
+                return Assignment.findAssignment(id);
+            }
+        };
+    }
+    
+    public Converter<String, Assignment> ApplicationConversionServiceFactoryBean.getStringToAssignmentConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.edumosphere.lms.domain.Assignment>() {
+            public com.edumosphere.lms.domain.Assignment convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Assignment.class);
+            }
+        };
+    }
+    
+    public Converter<AssignmentGrade, String> ApplicationConversionServiceFactoryBean.getAssignmentGradeToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.edumosphere.lms.domain.AssignmentGrade, java.lang.String>() {
+            public String convert(AssignmentGrade assignmentGrade) {
+                return new StringBuilder().append(assignmentGrade.getCreatedtime()).append(' ').append(assignmentGrade.getModifiedtime()).append(' ').append(assignmentGrade.getGrader()).append(' ').append(assignmentGrade.getGrade()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, AssignmentGrade> ApplicationConversionServiceFactoryBean.getIdToAssignmentGradeConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.edumosphere.lms.domain.AssignmentGrade>() {
+            public com.edumosphere.lms.domain.AssignmentGrade convert(java.lang.Long id) {
+                return AssignmentGrade.findAssignmentGrade(id);
+            }
+        };
+    }
+    
+    public Converter<String, AssignmentGrade> ApplicationConversionServiceFactoryBean.getStringToAssignmentGradeConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.edumosphere.lms.domain.AssignmentGrade>() {
+            public com.edumosphere.lms.domain.AssignmentGrade convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), AssignmentGrade.class);
+            }
+        };
+    }
+    
+    public Converter<AssignmentUserMapping, String> ApplicationConversionServiceFactoryBean.getAssignmentUserMappingToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.edumosphere.lms.domain.AssignmentUserMapping, java.lang.String>() {
+            public String convert(AssignmentUserMapping assignmentUserMapping) {
+                return "(no displayable fields)";
+            }
+        };
+    }
+    
+    public Converter<Long, AssignmentUserMapping> ApplicationConversionServiceFactoryBean.getIdToAssignmentUserMappingConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.edumosphere.lms.domain.AssignmentUserMapping>() {
+            public com.edumosphere.lms.domain.AssignmentUserMapping convert(java.lang.Long id) {
+                return AssignmentUserMapping.findAssignmentUserMapping(id);
+            }
+        };
+    }
+    
+    public Converter<String, AssignmentUserMapping> ApplicationConversionServiceFactoryBean.getStringToAssignmentUserMappingConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.edumosphere.lms.domain.AssignmentUserMapping>() {
+            public com.edumosphere.lms.domain.AssignmentUserMapping convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), AssignmentUserMapping.class);
+            }
+        };
+    }
     
     public Converter<Company, String> ApplicationConversionServiceFactoryBean.getCompanyToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.edumosphere.lms.domain.Company, java.lang.String>() {
@@ -145,6 +224,54 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<CourseGroup, String> ApplicationConversionServiceFactoryBean.getCourseGroupToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.edumosphere.lms.domain.CourseGroup, java.lang.String>() {
+            public String convert(CourseGroup courseGroup) {
+                return new StringBuilder().append(courseGroup.getIdnumber()).append(' ').append(courseGroup.getName()).append(' ').append(courseGroup.getDescription()).append(' ').append(courseGroup.getDescriptionformat()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, CourseGroup> ApplicationConversionServiceFactoryBean.getIdToCourseGroupConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.edumosphere.lms.domain.CourseGroup>() {
+            public com.edumosphere.lms.domain.CourseGroup convert(java.lang.Long id) {
+                return CourseGroup.findCourseGroup(id);
+            }
+        };
+    }
+    
+    public Converter<String, CourseGroup> ApplicationConversionServiceFactoryBean.getStringToCourseGroupConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.edumosphere.lms.domain.CourseGroup>() {
+            public com.edumosphere.lms.domain.CourseGroup convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), CourseGroup.class);
+            }
+        };
+    }
+    
+    public Converter<CourseGroupMember, String> ApplicationConversionServiceFactoryBean.getCourseGroupMemberToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.edumosphere.lms.domain.CourseGroupMember, java.lang.String>() {
+            public String convert(CourseGroupMember courseGroupMember) {
+                return new StringBuilder().append(courseGroupMember.getTimeadded()).append(' ').append(courseGroupMember.getComponent()).append(' ').append(courseGroupMember.getItemid()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, CourseGroupMember> ApplicationConversionServiceFactoryBean.getIdToCourseGroupMemberConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.edumosphere.lms.domain.CourseGroupMember>() {
+            public com.edumosphere.lms.domain.CourseGroupMember convert(java.lang.Long id) {
+                return CourseGroupMember.findCourseGroupMember(id);
+            }
+        };
+    }
+    
+    public Converter<String, CourseGroupMember> ApplicationConversionServiceFactoryBean.getStringToCourseGroupMemberConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.edumosphere.lms.domain.CourseGroupMember>() {
+            public com.edumosphere.lms.domain.CourseGroupMember convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), CourseGroupMember.class);
+            }
+        };
+    }
+    
     public Converter<CourseModules, String> ApplicationConversionServiceFactoryBean.getCourseModulesToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.edumosphere.lms.domain.CourseModules, java.lang.String>() {
             public String convert(CourseModules courseModules) {
@@ -213,6 +340,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, com.edumosphere.lms.domain.CourseSections>() {
             public com.edumosphere.lms.domain.CourseSections convert(String id) {
                 return getObject().convert(getObject().convert(id, Long.class), CourseSections.class);
+            }
+        };
+    }
+    
+    public Converter<Enrolment, String> ApplicationConversionServiceFactoryBean.getEnrolmentToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.edumosphere.lms.domain.Enrolment, java.lang.String>() {
+            public String convert(Enrolment enrolment) {
+                return new StringBuilder().append(enrolment.getEnrol()).append(' ').append(enrolment.getStatus()).append(' ').append(enrolment.getSortorder()).append(' ').append(enrolment.getName()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Enrolment> ApplicationConversionServiceFactoryBean.getIdToEnrolmentConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.edumosphere.lms.domain.Enrolment>() {
+            public com.edumosphere.lms.domain.Enrolment convert(java.lang.Long id) {
+                return Enrolment.findEnrolment(id);
+            }
+        };
+    }
+    
+    public Converter<String, Enrolment> ApplicationConversionServiceFactoryBean.getStringToEnrolmentConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.edumosphere.lms.domain.Enrolment>() {
+            public com.edumosphere.lms.domain.Enrolment convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Enrolment.class);
             }
         };
     }
@@ -313,6 +464,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<UserEnrolment, String> ApplicationConversionServiceFactoryBean.getUserEnrolmentToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.edumosphere.lms.domain.UserEnrolment, java.lang.String>() {
+            public String convert(UserEnrolment userEnrolment) {
+                return new StringBuilder().append(userEnrolment.getStatus()).append(' ').append(userEnrolment.getTimestart()).append(' ').append(userEnrolment.getTimeend()).append(' ').append(userEnrolment.getModifierid()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, UserEnrolment> ApplicationConversionServiceFactoryBean.getIdToUserEnrolmentConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.edumosphere.lms.domain.UserEnrolment>() {
+            public com.edumosphere.lms.domain.UserEnrolment convert(java.lang.Long id) {
+                return UserEnrolment.findUserEnrolment(id);
+            }
+        };
+    }
+    
+    public Converter<String, UserEnrolment> ApplicationConversionServiceFactoryBean.getStringToUserEnrolmentConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.edumosphere.lms.domain.UserEnrolment>() {
+            public com.edumosphere.lms.domain.UserEnrolment convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), UserEnrolment.class);
+            }
+        };
+    }
+    
     public Converter<Userpermission, String> ApplicationConversionServiceFactoryBean.getUserpermissionToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.edumosphere.lms.domain.Userpermission, java.lang.String>() {
             public String convert(Userpermission userpermission) {
@@ -338,6 +513,15 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     }
     
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
+        registry.addConverter(getAssignmentToStringConverter());
+        registry.addConverter(getIdToAssignmentConverter());
+        registry.addConverter(getStringToAssignmentConverter());
+        registry.addConverter(getAssignmentGradeToStringConverter());
+        registry.addConverter(getIdToAssignmentGradeConverter());
+        registry.addConverter(getStringToAssignmentGradeConverter());
+        registry.addConverter(getAssignmentUserMappingToStringConverter());
+        registry.addConverter(getIdToAssignmentUserMappingConverter());
+        registry.addConverter(getStringToAssignmentUserMappingConverter());
         registry.addConverter(getCompanyToStringConverter());
         registry.addConverter(getIdToCompanyConverter());
         registry.addConverter(getStringToCompanyConverter());
@@ -353,6 +537,12 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getCourseFormatOptionsToStringConverter());
         registry.addConverter(getIdToCourseFormatOptionsConverter());
         registry.addConverter(getStringToCourseFormatOptionsConverter());
+        registry.addConverter(getCourseGroupToStringConverter());
+        registry.addConverter(getIdToCourseGroupConverter());
+        registry.addConverter(getStringToCourseGroupConverter());
+        registry.addConverter(getCourseGroupMemberToStringConverter());
+        registry.addConverter(getIdToCourseGroupMemberConverter());
+        registry.addConverter(getStringToCourseGroupMemberConverter());
         registry.addConverter(getCourseModulesToStringConverter());
         registry.addConverter(getIdToCourseModulesConverter());
         registry.addConverter(getStringToCourseModulesConverter());
@@ -362,6 +552,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getCourseSectionsToStringConverter());
         registry.addConverter(getIdToCourseSectionsConverter());
         registry.addConverter(getStringToCourseSectionsConverter());
+        registry.addConverter(getEnrolmentToStringConverter());
+        registry.addConverter(getIdToEnrolmentConverter());
+        registry.addConverter(getStringToEnrolmentConverter());
         registry.addConverter(getModulesToStringConverter());
         registry.addConverter(getIdToModulesConverter());
         registry.addConverter(getStringToModulesConverter());
@@ -374,6 +567,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getUserToStringConverter());
         registry.addConverter(getIdToUserConverter());
         registry.addConverter(getStringToUserConverter());
+        registry.addConverter(getUserEnrolmentToStringConverter());
+        registry.addConverter(getIdToUserEnrolmentConverter());
+        registry.addConverter(getStringToUserEnrolmentConverter());
         registry.addConverter(getUserpermissionToStringConverter());
         registry.addConverter(getIdToUserpermissionConverter());
         registry.addConverter(getStringToUserpermissionConverter());

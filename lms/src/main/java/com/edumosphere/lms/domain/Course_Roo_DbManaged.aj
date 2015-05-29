@@ -3,13 +3,16 @@
 
 package com.edumosphere.lms.domain;
 
+import com.edumosphere.lms.domain.Assignment;
 import com.edumosphere.lms.domain.Company;
 import com.edumosphere.lms.domain.Course;
 import com.edumosphere.lms.domain.CourseCategories;
 import com.edumosphere.lms.domain.CourseCompletions;
 import com.edumosphere.lms.domain.CourseFormatOptions;
+import com.edumosphere.lms.domain.CourseGroup;
 import com.edumosphere.lms.domain.CourseModules;
 import com.edumosphere.lms.domain.CourseSections;
+import com.edumosphere.lms.domain.Enrolment;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -21,16 +24,25 @@ import javax.validation.constraints.NotNull;
 privileged aspect Course_Roo_DbManaged {
     
     @OneToMany(mappedBy = "courseid", cascade = CascadeType.ALL)
+    private Set<Assignment> Course.assignments;
+    
+    @OneToMany(mappedBy = "courseid", cascade = CascadeType.ALL)
     private Set<CourseCompletions> Course.courseCompletionss;
     
     @OneToMany(mappedBy = "courseid", cascade = CascadeType.ALL)
     private Set<CourseFormatOptions> Course.courseFormatOptionss;
     
     @OneToMany(mappedBy = "courseid", cascade = CascadeType.ALL)
+    private Set<CourseGroup> Course.courseGroups;
+    
+    @OneToMany(mappedBy = "courseid", cascade = CascadeType.ALL)
     private Set<CourseModules> Course.courseModuleses;
     
     @OneToMany(mappedBy = "courseid", cascade = CascadeType.ALL)
     private Set<CourseSections> Course.courseSectionss;
+    
+    @OneToMany(mappedBy = "courseid", cascade = CascadeType.ALL)
+    private Set<Enrolment> Course.enrolments;
     
     @ManyToOne
     @JoinColumn(name = "categoryid", referencedColumnName = "categoryid", nullable = false)
@@ -103,6 +115,14 @@ privileged aspect Course_Roo_DbManaged {
     @NotNull
     private Integer Course.publishstatus;
     
+    public Set<Assignment> Course.getAssignments() {
+        return assignments;
+    }
+    
+    public void Course.setAssignments(Set<Assignment> assignments) {
+        this.assignments = assignments;
+    }
+    
     public Set<CourseCompletions> Course.getCourseCompletionss() {
         return courseCompletionss;
     }
@@ -119,6 +139,14 @@ privileged aspect Course_Roo_DbManaged {
         this.courseFormatOptionss = courseFormatOptionss;
     }
     
+    public Set<CourseGroup> Course.getCourseGroups() {
+        return courseGroups;
+    }
+    
+    public void Course.setCourseGroups(Set<CourseGroup> courseGroups) {
+        this.courseGroups = courseGroups;
+    }
+    
     public Set<CourseModules> Course.getCourseModuleses() {
         return courseModuleses;
     }
@@ -133,6 +161,14 @@ privileged aspect Course_Roo_DbManaged {
     
     public void Course.setCourseSectionss(Set<CourseSections> courseSectionss) {
         this.courseSectionss = courseSectionss;
+    }
+    
+    public Set<Enrolment> Course.getEnrolments() {
+        return enrolments;
+    }
+    
+    public void Course.setEnrolments(Set<Enrolment> enrolments) {
+        this.enrolments = enrolments;
     }
     
     public CourseCategories Course.getCategoryid() {

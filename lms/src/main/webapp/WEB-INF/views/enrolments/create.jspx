@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_edumosphere_lms_domain_Enrolment" modelAttribute="enrolment" path="/enrolments" render="${empty dependencies}" z="cnVN4DMBunTmmlyLCUs8hqLr1HA=">
+        <field:simple field="userEnrolments" id="c_com_edumosphere_lms_domain_Enrolment_userEnrolments" messageCode="entity_reference_not_managed" messageCodeAttribute="User Enrolment" z="WQLciz5F8oREocWEShJx0tzI6ic="/>
+        <field:select field="courseid" id="c_com_edumosphere_lms_domain_Enrolment_courseid" itemValue="courseid" items="${courses}" path="/courses" z="NDMBIqZfAx+MHuHbKZRnh1SvWAE="/>
+        <field:input field="enrol" id="c_com_edumosphere_lms_domain_Enrolment_enrol" required="true" z="IY0AtZ3hULKot7GLTqFF5dNyc88="/>
+        <field:input field="status" id="c_com_edumosphere_lms_domain_Enrolment_status" required="true" validationMessageCode="field_invalid_integer" z="Hb4NrPR2KZQ6STXeJH1WoBBA/PA="/>
+        <field:input field="sortorder" id="c_com_edumosphere_lms_domain_Enrolment_sortorder" required="true" validationMessageCode="field_invalid_integer" z="cssmvyYHvk8Q1jPGyQ3ZjaJc8Is="/>
+        <field:input field="name" id="c_com_edumosphere_lms_domain_Enrolment_name" z="eqV1bEocD8VjbI2eBNDig7hTeNY="/>
+        <field:input field="enrolperiod" id="c_com_edumosphere_lms_domain_Enrolment_enrolperiod" validationMessageCode="field_invalid_integer" z="AVxc70LV26oqcjjz0/wPejH+3t0="/>
+        <field:input field="enrolstartdate" id="c_com_edumosphere_lms_domain_Enrolment_enrolstartdate" validationMessageCode="field_invalid_integer" z="rGzmzHa4olsvdHpyI9Mc9OdHAzk="/>
+        <field:input field="enrolenddate" id="c_com_edumosphere_lms_domain_Enrolment_enrolenddate" validationMessageCode="field_invalid_integer" z="hWIyySBD4N4B7IUMizf7FogNaWw="/>
+        <field:checkbox field="expirynotify" id="c_com_edumosphere_lms_domain_Enrolment_expirynotify" z="2kjznfSsLHYYBp+EUCPCS3uT0kY="/>
+        <field:input field="expirythreshold" id="c_com_edumosphere_lms_domain_Enrolment_expirythreshold" validationMessageCode="field_invalid_integer" z="/c5JCwvB0IsNyvL+O7+5VijsTJ4="/>
+        <field:checkbox field="notifyall" id="c_com_edumosphere_lms_domain_Enrolment_notifyall" z="7vl5uzVMhLDCgaVX4gHy3BiiJQ8="/>
+        <field:input field="password" id="c_com_edumosphere_lms_domain_Enrolment_password" z="TlwExgRCXTvO2IUuU1gk6LaycZ8="/>
+        <field:input field="cost" id="c_com_edumosphere_lms_domain_Enrolment_cost" z="WEmEEgNCADUEZCsKrZ56e8YP/M0="/>
+        <field:input field="currency" id="c_com_edumosphere_lms_domain_Enrolment_currency" z="OzcK7VzKx4EtOwjrowHGQT2U7sw="/>
+        <field:input field="roleid" id="c_com_edumosphere_lms_domain_Enrolment_roleid" validationMessageCode="field_invalid_integer" z="nLMpJ7PKteiGKRsouqdP/0nYwXU="/>
+        <field:input field="customint1" id="c_com_edumosphere_lms_domain_Enrolment_customint1" validationMessageCode="field_invalid_integer" z="oc+js5UcIOWhqrkeL3OQO5ZhRUk="/>
+        <field:input field="customint2" id="c_com_edumosphere_lms_domain_Enrolment_customint2" validationMessageCode="field_invalid_integer" z="INOB1ZbGnMPoHShKSyJV7x/FPOc="/>
+        <field:input field="customchar1" id="c_com_edumosphere_lms_domain_Enrolment_customchar1" z="eo35wF6XBQ5omhIcd7ZRZD/qYRY="/>
+        <field:input field="customchar2" id="c_com_edumosphere_lms_domain_Enrolment_customchar2" z="8+oA7PRccDlK8v/U6Pzfyi8gIYU="/>
+        <field:input field="customdec1" id="c_com_edumosphere_lms_domain_Enrolment_customdec1" validationMessageCode="field_invalid_number" z="B/FosbNNjcAIm3SLurWa09kE0/Y="/>
+        <field:input field="customdec2" id="c_com_edumosphere_lms_domain_Enrolment_customdec2" validationMessageCode="field_invalid_number" z="HOvxUyAMl+TGM08UKWI6G1D1UF4="/>
+        <field:input field="customtext1" id="c_com_edumosphere_lms_domain_Enrolment_customtext1" z="LiEuclGRwXYNHBGXn1TfmUiJSPU="/>
+        <field:input field="customtext2" id="c_com_edumosphere_lms_domain_Enrolment_customtext2" z="wvYPb1JaPnlPNfUNiqvbrjVASJk="/>
+        <field:input field="createdtime" id="c_com_edumosphere_lms_domain_Enrolment_createdtime" required="true" validationMessageCode="field_invalid_integer" z="/MqvopkkYhpJLN/OtcCEEzcohR8="/>
+        <field:input field="modifiedtime" id="c_com_edumosphere_lms_domain_Enrolment_modifiedtime" required="true" validationMessageCode="field_invalid_integer" z="PUybx5h3ifnjVoybZrFvF9QXhME="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_edumosphere_lms_domain_Enrolment" render="${not empty dependencies}" z="o1+SiCMKtMgjaEDUifbKPrbAX6s="/>
+</div>

@@ -25,6 +25,9 @@
         <field:checkbox field="enablecompletion" id="c_com_edumosphere_lms_domain_Course_enablecompletion" z="NpEDaMX0kB2MjtZf8AoYGT4pYFw="/>
         <field:checkbox field="completionnotify" id="c_com_edumosphere_lms_domain_Course_completionnotify" z="YEScBzhLVs8aEkmBsq+Fbb62wIs="/>
         <field:input field="publishstatus" id="c_com_edumosphere_lms_domain_Course_publishstatus" required="true" validationMessageCode="field_invalid_integer" z="U0BYFF+uo+EsY/Op9C0Ck93Sdck="/>
+        <field:simple field="assignments" id="c_com_edumosphere_lms_domain_Course_assignments" messageCode="entity_reference_not_managed" messageCodeAttribute="Assignment" z="GQvr7vkpCWFHfPf3IUTMueKELic="/>
+        <field:simple field="courseGroups" id="c_com_edumosphere_lms_domain_Course_courseGroups" messageCode="entity_reference_not_managed" messageCodeAttribute="Course Group" z="ICnLwhXx7Z86M9aezwhWQsxX35I="/>
+        <field:simple field="enrolments" id="c_com_edumosphere_lms_domain_Course_enrolments" messageCode="entity_reference_not_managed" messageCodeAttribute="Enrolment" z="mPfDAuiJUsjdaMv2Jde2NIg7VUE="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_edumosphere_lms_domain_Course" render="${not empty dependencies}" z="RJSGHywrtH+vC7RC5wMAYH5bSEg="/>
 </div>

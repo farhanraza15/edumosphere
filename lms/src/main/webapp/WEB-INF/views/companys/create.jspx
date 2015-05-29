@@ -18,6 +18,10 @@
         <field:checkbox field="active" id="c_com_edumosphere_lms_domain_Company_active" z="UpOwkWVAozmodIFnprg0uAZIH1Y="/>
         <field:input field="createtime" id="c_com_edumosphere_lms_domain_Company_createtime" required="true" validationMessageCode="field_invalid_integer" z="04kSykq7b3ENr1qo2NmmhR3UOyY="/>
         <field:input field="updatetime" id="c_com_edumosphere_lms_domain_Company_updatetime" required="true" validationMessageCode="field_invalid_integer" z="fQqRHkeD5+SMDMtNxZIzE39Q6nM="/>
+        <field:simple field="assignmentGrades" id="c_com_edumosphere_lms_domain_Company_assignmentGrades" messageCode="entity_reference_not_managed" messageCodeAttribute="Assignment Grade" z="oWEHsxWCP0XC7u58dMo8a6lNs/0="/>
+        <field:simple field="assignmentUserMappings" id="c_com_edumosphere_lms_domain_Company_assignmentUserMappings" messageCode="entity_reference_not_managed" messageCodeAttribute="Assignment User Mapping" z="GvOXVAx27LpBBB/o7o0QvteoOx0="/>
+        <field:simple field="courseGroupMembers" id="c_com_edumosphere_lms_domain_Company_courseGroupMembers" messageCode="entity_reference_not_managed" messageCodeAttribute="Course Group Member" z="gzY4mys4XNOfZbxOrYy7r9PJODE="/>
+        <field:simple field="userEnrolments" id="c_com_edumosphere_lms_domain_Company_userEnrolments" messageCode="entity_reference_not_managed" messageCodeAttribute="User Enrolment" z="Wb1e0KIWdGyexNKPgWJd1pXG4EM="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_edumosphere_lms_domain_Company" render="${not empty dependencies}" z="9n7yPBW9fCze5a+QEYDnEyd6s8c="/>
 </div>

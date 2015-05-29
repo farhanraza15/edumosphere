@@ -10,7 +10,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 privileged aspect Company_Roo_ToString {
     
     public String Company.toString() {
-        return new ReflectionToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).setExcludeFieldNames("courses", "courseCategorieses", "courseCompletionss", "courseFormatOptionss", "courseModuleses", "courseModulesCompletions", "courseSectionss", "moduleses", "users", "userpermissions").toString();
+        return new ReflectionToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).setExcludeFieldNames("courses", "courseCategorieses", "courseCompletionss", "courseFormatOptionss", "courseModuleses", "courseModulesCompletions", "courseSectionss", "moduleses", "users", "userpermissions", "assignmentGrades", "assignmentUserMappings", "courseGroupMembers", "userEnrolments").toString();
     }
     
 }

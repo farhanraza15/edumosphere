@@ -14,12 +14,12 @@ import javax.validation.constraints.NotNull;
 privileged aspect CourseFormatOptions_Roo_DbManaged {
     
     @ManyToOne
-    @JoinColumn(name = "companyid", referencedColumnName = "companyid", nullable = false)
-    private Company CourseFormatOptions.companyid;
-    
-    @ManyToOne
     @JoinColumn(name = "courseid", referencedColumnName = "courseid", nullable = false)
     private Course CourseFormatOptions.courseid;
+    
+    @ManyToOne
+    @JoinColumn(name = "companyid", referencedColumnName = "companyid", nullable = false)
+    private Company CourseFormatOptions.companyid;
     
     @Column(name = "format", length = 21, unique = true)
     @NotNull
@@ -36,20 +36,20 @@ privileged aspect CourseFormatOptions_Roo_DbManaged {
     @Column(name = "value")
     private String CourseFormatOptions.value;
     
-    public Company CourseFormatOptions.getCompanyid() {
-        return companyid;
-    }
-    
-    public void CourseFormatOptions.setCompanyid(Company companyid) {
-        this.companyid = companyid;
-    }
-    
     public Course CourseFormatOptions.getCourseid() {
         return courseid;
     }
     
     public void CourseFormatOptions.setCourseid(Course courseid) {
         this.courseid = courseid;
+    }
+    
+    public Company CourseFormatOptions.getCompanyid() {
+        return companyid;
+    }
+    
+    public void CourseFormatOptions.setCompanyid(Company companyid) {
+        this.companyid = companyid;
     }
     
     public String CourseFormatOptions.getFormat() {

@@ -3,16 +3,20 @@
 
 package com.edumosphere.lms.web;
 
+import com.edumosphere.lms.domain.AssignmentGrade;
+import com.edumosphere.lms.domain.AssignmentUserMapping;
 import com.edumosphere.lms.domain.Company;
 import com.edumosphere.lms.domain.Course;
 import com.edumosphere.lms.domain.CourseCategories;
 import com.edumosphere.lms.domain.CourseCompletions;
 import com.edumosphere.lms.domain.CourseFormatOptions;
+import com.edumosphere.lms.domain.CourseGroupMember;
 import com.edumosphere.lms.domain.CourseModules;
 import com.edumosphere.lms.domain.CourseModulesCompletion;
 import com.edumosphere.lms.domain.CourseSections;
 import com.edumosphere.lms.domain.Modules;
 import com.edumosphere.lms.domain.User;
+import com.edumosphere.lms.domain.UserEnrolment;
 import com.edumosphere.lms.domain.Userpermission;
 import com.edumosphere.lms.web.CompanyController;
 import java.io.UnsupportedEncodingException;
@@ -54,15 +58,15 @@ privileged aspect CompanyController_Roo_Controller {
     }
     
     @RequestMapping(produces = "text/html")
-    public String CompanyController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public String CompanyController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-            uiModel.addAttribute("companys", Company.findCompanyEntries(firstResult, sizeNo));
+            uiModel.addAttribute("companys", Company.findCompanyEntries(firstResult, sizeNo, sortFieldName, sortOrder));
             float nrOfPages = (float) Company.countCompanys() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("companys", Company.findAllCompanys());
+            uiModel.addAttribute("companys", Company.findAllCompanys(sortFieldName, sortOrder));
         }
         return "companys/list";
     }
@@ -96,15 +100,19 @@ privileged aspect CompanyController_Roo_Controller {
     
     void CompanyController.populateEditForm(Model uiModel, Company company) {
         uiModel.addAttribute("company", company);
+        uiModel.addAttribute("assignmentgrades", AssignmentGrade.findAllAssignmentGrades());
+        uiModel.addAttribute("assignmentusermappings", AssignmentUserMapping.findAllAssignmentUserMappings());
         uiModel.addAttribute("courses", Course.findAllCourses());
         uiModel.addAttribute("coursecategorieses", CourseCategories.findAllCourseCategorieses());
         uiModel.addAttribute("coursecompletionses", CourseCompletions.findAllCourseCompletionses());
         uiModel.addAttribute("courseformatoptionses", CourseFormatOptions.findAllCourseFormatOptionses());
+        uiModel.addAttribute("coursegroupmembers", CourseGroupMember.findAllCourseGroupMembers());
         uiModel.addAttribute("coursemoduleses", CourseModules.findAllCourseModuleses());
         uiModel.addAttribute("coursemodulescompletions", CourseModulesCompletion.findAllCourseModulesCompletions());
         uiModel.addAttribute("coursesectionses", CourseSections.findAllCourseSectionses());
         uiModel.addAttribute("moduleses", Modules.findAllModuleses());
         uiModel.addAttribute("users", User.findAllUsers());
+        uiModel.addAttribute("userenrolments", UserEnrolment.findAllUserEnrolments());
         uiModel.addAttribute("userpermissions", Userpermission.findAllUserpermissions());
     }
     
